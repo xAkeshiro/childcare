@@ -1,6 +1,6 @@
 import { motion } from 'motion/react'
 import { Baby, Clock, UtensilsCrossed, Users } from 'lucide-react'
-import { Block, Bulb, Crayon } from '@/components/brand/illustrations'
+import { Block, ThoughtBubble, Crayon } from '@/components/brand/illustrations'
 import { Highlighter } from '@/components/motion/highlighter'
 import { Button } from '@/components/ui/button'
 import { Card, IconCircle } from '@/components/ui/card'
@@ -17,7 +17,7 @@ export function Hero() {
         <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
           <div className="max-w-[36rem]">
             {/* On phones the mascot sits above the headline; the full scene shows from lg up. */}
-            <Bulb className="mb-6 h-24 w-auto lg:hidden" title="The Little Thinkers mascot, a smiling lightbulb" />
+            <ThoughtBubble className="mb-6 h-24 w-auto lg:hidden" title="The Little Thinkers mascot, a smiling thought bubble" />
             <p className="text-[0.9375rem] font-semibold text-ink-soft">{hero.eyebrow}</p>
             <h1 className="mt-3 font-display text-h1 font-semibold text-ink">
               {hero.headline.before}
@@ -75,11 +75,11 @@ function HeroArt() {
   return (
     <div className="relative mx-auto hidden aspect-[5/4] w-full max-w-[520px] lg:block" aria-hidden="true">
       <motion.div
-        className="absolute left-1/2 top-[4%] h-[66%] w-auto -translate-x-1/2"
+        className="absolute left-1/2 top-[2%] h-[62%] w-auto -translate-x-1/2"
         animate={{ y: [0, -8, 0] }}
         transition={{ duration: 6, ease: 'easeInOut', repeat: Infinity }}
       >
-        <Bulb className="h-full w-auto" title={`${site.name} mascot`} />
+        <ThoughtBubble className="h-full w-auto" title={`${site.name} mascot`} />
       </motion.div>
       <div className="absolute bottom-0 left-[4%] w-[46%]">
         <div className="relative aspect-[2/1.86]">

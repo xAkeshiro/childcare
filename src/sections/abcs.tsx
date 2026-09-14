@@ -10,7 +10,6 @@ const tone = {
   red: 'text-crayon-red',
   blue: 'text-crayon-blue',
   green: 'text-crayon-green',
-  orange: 'text-crayon-orange',
 } as const
 
 /** The values, where the alphabet blocks finally mean something: the letters are the content. */
@@ -22,7 +21,7 @@ export function Abcs() {
           <H2>{abcs.headline}</H2>
           <Lede className="mt-4">{abcs.intro}</Lede>
         </Reveal>
-        <AnimatedGroup as="ul" className="mt-12 grid gap-x-12 gap-y-12 md:grid-cols-2 md:gap-y-16" asChild="li" itemClassName="flex gap-6">
+        <AnimatedGroup as="ul" className="mt-12 grid gap-x-10 gap-y-12 md:grid-cols-3" asChild="li" itemClassName="flex gap-5">
           {abcs.items.map((item) => (
             <Fragment key={item.letter}>
               <Block letter={item.letter} className={`w-24 shrink-0 ${tone[item.color]}`} title={`Block with the letter ${item.letter}`} />
@@ -30,11 +29,6 @@ export function Abcs() {
                 <Label>{item.letter} is for</Label>
                 <h3 className="mt-1 font-display text-h3 font-semibold text-ink">
                   {item.word}
-                  {item.word === 'Dirt' && (
-                    <span className="ml-3 align-middle font-hand text-xl font-normal text-crayon-orange-deep" aria-hidden="true">
-                      rain or shine!
-                    </span>
-                  )}
                 </h3>
                 <p className="mt-3 max-w-[26rem] text-ink-soft">{item.text}</p>
               </div>

@@ -1,5 +1,5 @@
 import { Check } from 'lucide-react'
-import { Bulb } from '@/components/brand/illustrations'
+import { ThoughtBubble } from '@/components/brand/illustrations'
 import { Highlighter } from '@/components/motion/highlighter'
 import { Reveal } from '@/components/motion/reveal'
 import { Container, Section } from '@/components/ui/layout'
@@ -21,7 +21,7 @@ export function About() {
                 className="grid aspect-[4/5] w-full place-items-center rounded-lg bg-[linear-gradient(160deg,var(--color-paper)_0%,var(--color-accent-soft)_100%)] text-center"
               >
                 <div className="px-6">
-                  <Bulb className="mx-auto h-24 w-auto" />
+                  <ThoughtBubble className="mx-auto h-24 w-auto" />
                   <p className="mt-4 text-[0.9375rem] font-bold text-ink-soft">Add a photo of the reading corner</p>
                 </div>
               </div>
@@ -39,7 +39,7 @@ export function About() {
             <blockquote className="mt-9 max-w-[30rem] font-display text-[1.75rem] font-semibold leading-[1.3] text-ink">
               Every child has{' '}
               <Highlighter action="underline" color="var(--color-marker)" strokeWidth={3} padding={1} iterations={2}>
-                little lightbulb moments
+                little aha moments
               </Highlighter>
               , the second something clicks and their whole face lights up. My job is to make room for as many of those as possible.
             </blockquote>

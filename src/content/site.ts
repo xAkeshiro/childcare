@@ -47,7 +47,7 @@ export const hero = {
   lede: `A licensed family child care home in ${site.city} for eight children, ages 12 months to 5. Home-cooked meals, outside every day, and a daily note at pickup.`,
   primaryCta: { label: 'Schedule a visit', href: '#visit' },
   secondaryCta: { label: 'See our programs', href: '#programs' },
-  proof: ['Ages 12 months to 5 years', 'Up to 8 children', 'Licensed, CPR and first-aid certified'],
+  proof: ['Licensed in California', 'CPR and first-aid certified', 'Up to 8 children'],
 } as const
 
 export const facts = [
@@ -65,7 +65,7 @@ export const about = {
     'Our days are play-based and unhurried. We read a lot, sing a lot, paint with our hands, count the snap peas at lunch, and go outside every day, rain or shine. Parents get a daily note, photos, and a real conversation at pickup, not just a clipboard.',
   ],
   quote:
-    'Every child has little lightbulb moments, the second something clicks and their whole face lights up. My job is to make room for as many of those as possible.',
+    'Every child has little aha moments, the second something clicks and their whole face lights up. My job is to make room for as many of those as possible.',
   credentials: [
     'Licensed by the California Department of Social Services',
     'Pediatric CPR and first-aid certified',
@@ -130,12 +130,11 @@ export const day = {
 export const abcs = {
   eyebrow: 'What we believe',
   headline: 'Our ABCs',
-  intro: 'The four things we come back to every single day.',
+  intro: 'The three things we come back to every single day.',
   items: [
     { letter: 'A', color: 'red', word: 'Affection', text: "Every child is greeted by name and with a hug, or a high-five if they'd rather. Warm, consistent care is where all the learning starts." },
     { letter: 'B', color: 'blue', word: 'Belonging', text: "A small group means no one gets lost in the crowd. Every child has a cubby, a job, a spot on the rug, and friends who notice when they're away." },
     { letter: 'C', color: 'green', word: 'Curiosity', text: "We follow the questions. If someone wants to know where the worms go when it rains, that's the afternoon's plan." },
-    { letter: 'D', color: 'orange', word: 'Dirt', text: 'We go outside every day, rain or shine. Please send play clothes. Some of our best thinking happens with muddy knees.' },
   ],
 } as const
 

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { AnimatePresence, motion } from 'motion/react'
 import { Menu, X } from 'lucide-react'
-import { Bulb } from '@/components/brand/illustrations'
+import { ThoughtBubble } from '@/components/brand/illustrations'
 import { Button } from '@/components/ui/button'
 import { Container } from '@/components/ui/layout'
 import { nav, site } from '@/content/site'
@@ -34,7 +34,7 @@ export function Navbar() {
     >
       <Container className="relative flex h-16 items-center gap-6 md:h-[4.5rem]">
         <a href="#top" className="flex items-center gap-2.5 rounded-md" aria-label={`${site.name}, back to top`}>
-          <Bulb className="h-9 w-auto" />
+          <ThoughtBubble className="h-9 w-auto" />
           <span className="flex flex-col leading-none">
             <span className="font-display text-[1.125rem] font-semibold text-ink">{site.name}</span>
             <span className="mt-0.5 hidden text-label font-bold uppercase text-ink-soft sm:block">{site.descriptor}</span>

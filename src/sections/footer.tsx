@@ -1,4 +1,4 @@
-import { Bulb } from '@/components/brand/illustrations'
+import { ThoughtBubble } from '@/components/brand/illustrations'
 import { Container } from '@/components/ui/layout'
 import { footer, nav, site } from '@/content/site'
 
@@ -10,7 +10,7 @@ export function Footer() {
         <div className="grid gap-10 md:grid-cols-[1.4fr_1fr_1fr]">
           <div>
             <a href="#top" className="inline-flex items-center gap-2.5 rounded-md">
-              <Bulb className="h-8 w-auto" />
+              <ThoughtBubble className="h-8 w-auto" />
               <span className="flex flex-col leading-none">
                 <span className="font-display text-[1.125rem] font-semibold text-ink">{site.name}</span>
                 <span className="mt-0.5 text-label font-bold uppercase text-ink-soft">{site.descriptor}</span>

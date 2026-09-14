@@ -4,7 +4,7 @@ Website for a licensed family child care home in California. Built with Vite, Re
 TypeScript, Tailwind CSS v4, and Motion (the current name of Framer Motion), using
 components adapted from the 21st.dev ecosystem (Motion Primitives, Magic UI).
 
-The look: crayons, alphabet blocks, painted handprints, warm paper, and a smiling lightbulb
+The look: crayons, alphabet blocks, painted handprints, warm paper, and a smiling thought-bubble
 mascot, held together by the brand kit in `BRAND.md`.
 
 ## Run it
@@ -28,7 +28,7 @@ Node 20 or newer.
 | `src/sections/` | One file per section, in page order (navbar, hero, about, programs, day, tuition, abcs, steps, faq, visit, footer) |
 | `src/components/ui/` | Button, Card, Container, Section, headings, labels |
 | `src/components/motion/` | Reveal, AnimatedGroup, Accordion, Highlighter |
-| `src/components/brand/illustrations.tsx` | Bulb mascot, handprint, crayon, alphabet block, star, sun |
+| `src/components/brand/illustrations.tsx` | Thought-bubble mascot, handprint, crayon, alphabet block, star, sun |
 | `BRAND.md` | The brand kit |
 | `NAME-RESEARCH.md` | Why the site isn't called Little Thinkers, and the alternatives checked |
 | `.claude/skills/` | Project skills: framer-motion, 21st-dev-components, ui-ux-pro-max |
