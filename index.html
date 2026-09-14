@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Little Lightbulbs Family Child Care</title>
+  <meta name="application-name" content="Little Lightbulbs">
+  <meta name="description" content="Little Lightbulbs is a small, licensed family child care home in [City], California for infants, toddlers, and preschoolers. Play-based learning, warm meals, daily outdoor time, and lots of crayons.">
+  <meta name="theme-color" content="#FFF6E5">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+
+  <!-- Social sharing preview. After you deploy, replace the og:image path with the full https:// URL of assets/og.png -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Little Lightbulbs Family Child Care">
+  <meta property="og:description" content="Where bright ideas begin. A small, licensed family child care in [City], CA for ages 6 weeks to 5 years.">
+  <meta property="og:image" content="assets/og.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800&family=Patrick+Hand&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- ============================================================
+     Reusable drawings (crayons, handprints, blocks, the lightbulb).
+     They are referenced below with <use href="#id">. Colors are set
+     where they are used, so one drawing can appear in any crayon color.
+     ============================================================ -->
+<svg class="defs" width="0" height="0" aria-hidden="true" focusable="false">
+  <defs>
+    <!-- Slight wobble so strokes look drawn by hand -->
+    <filter id="wobble" x="-6%" y="-6%" width="112%" height="112%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="7" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="3.5" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+
+    <!-- Painted handprint -->
+    <symbol id="handprint" viewBox="0 0 100 120">
+      <g fill="currentColor">
+        <rect x="26" y="50" width="52" height="60" rx="24"/>
+        <rect x="27" y="14" width="10" height="54" rx="5" transform="rotate(-7 32 66)"/>
+        <rect x="41" y="4" width="10" height="64" rx="5"/>
+        <rect x="55" y="9" width="10" height="59" rx="5" transform="rotate(6 60 66)"/>
+        <rect x="69" y="24" width="10" height="44" rx="5" transform="rotate(15 74 66)"/>
+        <rect x="32" y="52" width="12" height="40" rx="6" transform="rotate(-50 38 92)"/>
+      </g>
+    </symbol>
+
+    <!-- Crayon, pointing up -->
+    <symbol id="crayon" viewBox="0 0 40 170">
+      <path d="M20 5 L31 34 H9 Z" fill="currentColor" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/>
+      <rect x="7" y="30" width="26" height="136" rx="4" fill="currentColor"/>
+      <rect x="7" y="50" width="26" height="86" fill="#000" opacity=".16"/>
+      <rect x="7" y="72" width="26" height="42" fill="#fff" opacity=".88"/>
+      <path d="M10 93 H30" stroke="#000" stroke-width="2.5" stroke-linecap="round" opacity=".35"/>
+    </symbol>
+
+    <!-- Wooden alphabet block (the letter is added where it is used) -->
+    <symbol id="block" viewBox="0 0 110 110">
+      <polygon points="10,35 35,10 110,10 85,35" fill="currentColor"/>
+      <polygon points="10,35 35,10 110,10 85,35" fill="#fff" opacity=".38"/>
+      <polygon points="85,35 110,10 110,85 85,110" fill="currentColor"/>
+      <polygon points="85,35 110,10 110,85 85,110" fill="#000" opacity=".28"/>
+      <rect x="10" y="35" width="75" height="75" fill="currentColor"/>
+      <rect x="21" y="46" width="53" height="53" rx="3" fill="#FFF8EA"/>
+      <path d="M10 35 H85 V110 H10 Z M35 10 H110 V85" fill="none" stroke="#2F2A44" stroke-width="3.5" stroke-linejoin="round"/>
+      <path d="M10 35 L35 10 M85 35 L110 10 M85 110 L110 85" fill="none" stroke="#2F2A44" stroke-width="3.5" stroke-linecap="round"/>
+    </symbol>
+
+    <!-- Star sticker -->
+    <symbol id="star" viewBox="0 0 100 100">
+      <polygon points="50,6 61,38 95,38 68,59 79,92 50,72 21,92 32,59 5,38 39,38" fill="currentColor" stroke="#2F2A44" stroke-width="5" stroke-linejoin="round"/>
+    </symbol>
+
+    <!-- Sun -->
+    <symbol id="sun" viewBox="0 0 120 120">
+      <g stroke="#2F2A44" stroke-width="5" stroke-linecap="round">
+        <path d="M60 8V22 M60 98V112 M8 60H22 M98 60H112 M23 23l10 10 M87 87l10 10 M97 23l-10 10 M33 87l-10 10"/>
+        <circle cx="60" cy="60" r="26" fill="#FFC53D"/>
+      </g>
+    </symbol>
+
+    <!-- The Little Lightbulbs mascot -->
+    <symbol id="bulb" viewBox="0 0 200 260">
+      <g stroke="#2F2A44" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M100 30V12 M153 49l11-14 M47 49L36 35 M179 91l17-5 M21 91L4 86" fill="none" stroke="#F58A2B"/>
+        <rect x="70" y="204" width="60" height="30" rx="6" fill="#C7CBD6"/>
+        <path d="M74 214H126 M74 224H126" fill="none" opacity=".45" stroke-width="4"/>
+        <rect x="86" y="232" width="28" height="14" rx="5" fill="#9AA0AE"/>
+        <path d="M62 166 A66 66 0 1 1 138 166 C135 178 131 188 130 198 L130 204 L70 204 L70 198 C69 188 65 178 62 166 Z" fill="#FFC53D"/>
+        <ellipse cx="76" cy="84" rx="9" ry="17" fill="#fff" stroke="none" opacity=".65" transform="rotate(-18 76 84)"/>
+        <circle cx="84" cy="106" r="6" fill="#2F2A44" stroke="none"/>
+        <circle cx="116" cy="106" r="6" fill="#2F2A44" stroke="none"/>
+        <path d="M82 128 Q100 148 118 128" fill="none"/>
+        <circle cx="68" cy="122" r="7" fill="#F27BA5" stroke="none" opacity=".6"/>
+        <circle cx="132" cy="122" r="7" fill="#F27BA5" stroke="none" opacity=".6"/>
+      </g>
+    </symbol>
+  </defs>
+</svg>
+
+<!-- ============================================================ HEADER -->
+<header class="site-header">
+  <div class="wrap header-row">
+    <a class="brand" href="#top" aria-label="Little Lightbulbs, back to top">
+      <svg class="brand-mark" viewBox="0 0 200 260" aria-hidden="true"><use href="#bulb"/></svg>
+      <span class="brand-text">
+        <span class="brand-name">Little Lightbulbs</span>
+        <span class="brand-tag">Family Child Care</span>
+      </span>
+    </a>
+
+    <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">
+      <span class="nav-toggle-bars" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span class="nav-toggle-label">Menu</span>
+    </button>
+
+    <nav id="site-nav" class="site-nav" aria-label="Main">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#programs">Programs</a></li>
+        <li><a href="#day">Our Day</a></li>
+        <li><a href="#abcs">Our ABCs</a></li>
+        <li><a href="#enroll">Enroll</a></li>
+      </ul>
+      <a class="btn btn-primary btn-sm" href="#enroll">Schedule a visit</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ============================================================ HERO -->
+<section id="top" class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow">A licensed family child care home in [City], California</p>
+      <h1>Where <span class="mark">bright ideas</span> begin.</h1>
+      <p class="lede">
+        A small, home-based program where babies, toddlers, and preschoolers are loved, kept safe,
+        and encouraged to wonder. Warm meals, messy art, big books, and outdoor play every single day.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#enroll">Schedule a visit</a>
+        <a class="btn btn-ghost" href="#programs">See our programs</a>
+      </div>
+      <ul class="chips" aria-label="Quick facts">
+        <li><i class="dot dot-red"></i>Ages 6 weeks to 5 years</li>
+        <li><i class="dot dot-blue"></i>Small group, big attention</li>
+        <li><i class="dot dot-green"></i>Licensed, CPR &amp; first-aid certified</li>
+      </ul>
+    </div>
+
+    <div class="hero-art-wrap">
+      <svg class="hero-art" viewBox="0 0 560 470" role="img" aria-labelledby="hero-art-title">
+        <title id="hero-art-title">A smiling crayon-drawn lightbulb surrounded by ABC blocks, crayons, and painted handprints</title>
+        <g filter="url(#wobble)">
+          <use href="#sun" x="20" y="18" width="110" height="110"/>
+          <use href="#handprint" x="440" y="26" width="90" height="108" class="c-red" transform="rotate(16 485 80)" opacity=".92"/>
+          <use href="#handprint" x="14" y="228" width="84" height="100" class="c-blue" transform="rotate(-24 56 278)" opacity=".92"/>
+          <use href="#star" x="150" y="96" width="34" height="34" class="c-yellow" transform="rotate(-12 167 113)"/>
+          <use href="#star" x="410" y="196" width="40" height="40" class="c-yellow" transform="rotate(14 430 216)"/>
+          <use href="#star" x="128" y="404" width="26" height="26" class="c-yellow"/>
+          <path d="M392 140 q10 -12 20 0 t20 0 t20 0" fill="none" stroke="#8B5CD6" stroke-width="5" stroke-linecap="round"/>
+          <path d="M96 156 q10 -12 20 0 t20 0" fill="none" stroke="#3FA85B" stroke-width="5" stroke-linecap="round"/>
+          <g class="bulb-float">
+            <use href="#bulb" x="180" y="56" width="200" height="260"/>
+          </g>
+          <!-- ABC blocks -->
+          <g class="blocks">
+            <use href="#block" x="36" y="346" width="92" height="92" class="c-red"/>
+            <text x="76" y="421" class="block-letter">A</text>
+            <use href="#block" x="130" y="346" width="92" height="92" class="c-blue"/>
+            <text x="170" y="421" class="block-letter">B</text>
+            <use href="#block" x="84" y="266" width="92" height="92" class="c-green"/>
+            <text x="124" y="341" class="block-letter">C</text>
+          </g>
+          <!-- Fanned crayons -->
+          <g transform="translate(448 296)">
+            <use href="#crayon" x="-26" y="0" width="40" height="170" class="c-purple" transform="rotate(-18 -6 170)"/>
+            <use href="#crayon" x="6" y="-8" width="40" height="170" class="c-green"/>
+            <use href="#crayon" x="38" y="0" width="40" height="170" class="c-orange" transform="rotate(18 58 170)"/>
+          </g>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ QUICK FACTS -->
+<section class="facts scallop" aria-label="At a glance">
+  <div class="wrap">
+    <ul class="facts-grid">
+      <li>
+        <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="17" fill="#fff"/><path d="M24 13v11l7 5" fill="none"/></svg>
+        <span class="fact-label">Hours</span>
+        <span class="fact-value">Mon to Fri, 7:00 am to 6:00 pm</span>
+      </li>
+      <li>
+        <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 41s-15-9-15-20a8 8 0 0 1 15-4 8 8 0 0 1 15 4c0 11-15 20-15 20z" fill="#FFD6DE"/></svg>
+        <span class="fact-label">Ages</span>
+        <span class="fact-value">6 weeks to 5 years</span>
+      </li>
+      <li>
+        <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M8 24L24 9l16 15" fill="none"/><path d="M12 22v18h24V22" fill="#E6F2FF"/><path d="M20 40V30h8v10" fill="#FFC53D"/></svg>
+        <span class="fact-label">Group size</span>
+        <span class="fact-value">Up to 8 children, mixed ages</span>
+      </li>
+      <li>
+        <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 15c-6-6-16-2-16 8 0 10 8 18 12 18 2 0 3-1 4-1s2 1 4 1c4 0 12-8 12-18 0-10-10-14-16-8z" fill="#FFB3B3"/><path d="M24 15c0-4 2-7 6-8" fill="none"/><path d="M27 10c3-3 8-2 8 2-4 1-7 0-8-2z" fill="#3FA85B"/></svg>
+        <span class="fact-label">Meals</span>
+        <span class="fact-value">Breakfast, lunch, and two snacks included</span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============================================================ ABOUT -->
+<section id="about" class="about">
+  <div class="wrap about-grid">
+    <div class="about-photo">
+      <figure class="polaroid">
+        <span class="tape tape-left" aria-hidden="true"></span>
+        <span class="tape tape-right" aria-hidden="true"></span>
+        <!-- Replace this placeholder with a real photo:
+             <img src="assets/photo.jpg" alt="[Name] reading a picture book with two toddlers"> -->
+        <div class="photo-placeholder" role="img" aria-label="Photo placeholder">
+          <svg viewBox="0 0 200 260" aria-hidden="true"><use href="#bulb"/></svg>
+          <span>Your photo here</span>
+        </div>
+        <figcaption>[Name], owner &amp; lead teacher</figcaption>
+      </figure>
+    </div>
+
+    <div class="about-copy">
+      <p class="eyebrow">About us</p>
+      <h2>Hi, I'm <span class="mark mark-blue">[Name]</span>.</h2>
+      <p>
+        Little Lightbulbs is my home and my heart. I opened it because I believe the early years deserve
+        more than a place to wait for pickup. Children this age are doing the hardest, most important
+        learning of their lives, and they do it best when they feel safe, known, and free to get a little messy.
+      </p>
+      <p>
+        Our days are play-based and unhurried. We read a lot, sing a lot, paint with our hands, count
+        the snap peas at lunch, and go outside every day, rain or shine. Parents get a daily note, photos,
+        and a real conversation at pickup, not just a clipboard.
+      </p>
+      <aside class="sticky">
+        <span class="tape tape-top" aria-hidden="true"></span>
+        <p>Every child has little lightbulb moments, the second something clicks and their whole face lights up. My job is to make room for as many of those as possible.</p>
+      </aside>
+      <ul class="credentials">
+        <li>Licensed by the California Department of Social Services</li>
+        <li>Pediatric CPR and first-aid certified</li>
+        <li>Early Childhood Education coursework, [units or degree]</li>
+        <li>[X] years caring for young children</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ PROGRAMS -->
+<section id="programs" class="programs scallop">
+  <div class="wrap">
+    <header class="section-head">
+      <p class="eyebrow">Programs</p>
+      <h2>Care that grows with your child</h2>
+      <p class="section-intro">Mixed ages, one small group. Siblings stay together, and the youngest learn from watching the oldest.</p>
+    </header>
+
+    <div class="cards">
+      <article class="card sketch tilt-l">
+        <div class="card-block c-red">
+          <svg viewBox="0 0 110 110" aria-hidden="true"><use href="#block"/><text x="47.5" y="89" class="block-letter">A</text></svg>
+        </div>
+        <h3>Infants</h3>
+        <p class="ages">6 weeks to 18 months</p>
+        <p>Cuddles, tummy time, songs, and a rhythm that follows your baby's cues, not the clock.</p>
+        <ul class="crayon-list">
+          <li>Individual feeding and nap schedules</li>
+          <li>Safe-sleep practices, always</li>
+          <li>Daily report with feeds, naps, and firsts</li>
+        </ul>
+      </article>
+
+      <article class="card sketch tilt-r">
+        <div class="card-block c-blue">
+          <svg viewBox="0 0 110 110" aria-hidden="true"><use href="#block"/><text x="47.5" y="89" class="block-letter">B</text></svg>
+        </div>
+        <h3>Toddlers</h3>
+        <p class="ages">18 months to 3 years</p>
+        <p>Sensory bins, first friendships, big feelings handled gently, and lots of "I did it!"</p>
+        <ul class="crayon-list">
+          <li>Potty learning when your child is ready</li>
+          <li>Songs, fingerplays, and simple sign language</li>
+          <li>Outdoor play twice a day</li>
+        </ul>
+      </article>
+
+      <article class="card sketch tilt-l">
+        <div class="card-block c-green">
+          <svg viewBox="0 0 110 110" aria-hidden="true"><use href="#block"/><text x="47.5" y="89" class="block-letter">C</text></svg>
+        </div>
+        <h3>Preschool</h3>
+        <p class="ages">3 to 5 years</p>
+        <p>Letters, numbers, and shapes woven into play. Kindergarten readiness without the pressure.</p>
+        <ul class="crayon-list">
+          <li>Letter of the week and name writing</li>
+          <li>Kitchen science and nature walks</li>
+          <li>Taking turns, using words, making friends</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ OUR DAY -->
+<section id="day" class="day">
+  <div class="wrap day-grid">
+    <header class="section-head">
+      <p class="eyebrow">Our day</p>
+      <h2>A day at Little Lightbulbs</h2>
+      <p class="section-intro">
+        Young children thrive on rhythm. Our schedule is the same every day, with plenty of room inside it
+        for a long book, a big puddle, or a project that just can't stop yet.
+      </p>
+      <p class="section-note">Infants follow their own feeding and sleeping schedules.</p>
+    </header>
+
+    <ol class="schedule ruled" aria-label="Daily schedule">
+      <li><span class="time">7:00</span><span class="what"><strong>Arrival, breakfast &amp; free play</strong><span>Hugs at the door, then puzzles, blocks, and the play kitchen</span></span></li>
+      <li><span class="time">9:00</span><span class="what"><strong>Circle time</strong><span>Songs, the weather, the letter of the week, and a story</span></span></li>
+      <li><span class="time">9:30</span><span class="what"><strong>Art &amp; sensory</strong><span>Crayons, finger paint, playdough, water tables</span></span></li>
+      <li><span class="time">10:30</span><span class="what"><strong>Snack &amp; outdoor play</strong><span>Bikes, bubbles, digging, and a nature hunt</span></span></li>
+      <li><span class="time">11:45</span><span class="what"><strong>Lunch</strong><span>Home-cooked, family style. We count the snap peas.</span></span></li>
+      <li><span class="time">12:30</span><span class="what"><strong>Nap &amp; quiet time</strong><span>Soft music, books, and rest for tired bodies</span></span></li>
+      <li><span class="time">2:30</span><span class="what"><strong>Snack &amp; story time</strong><span>Two books, at least. Three if we're lucky.</span></span></li>
+      <li><span class="time">3:15</span><span class="what"><strong>Outdoor play &amp; little experiments</strong><span>Baking soda volcanoes, shadow tracing, bug watching</span></span></li>
+      <li><span class="time">4:30</span><span class="what"><strong>Free play &amp; pickup</strong><span>Wind-down play and a real chat about the day, until 6:00</span></span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============================================================ OUR ABCS -->
+<section id="abcs" class="abcs scallop">
+  <div class="wrap">
+    <header class="section-head">
+      <p class="eyebrow">What we believe</p>
+      <h2>Our ABCs</h2>
+      <p class="section-intro">The four things we come back to every single day.</p>
+    </header>
+
+    <ul class="abc-grid">
+      <li class="abc sketch tilt-l">
+        <svg class="abc-block c-red" viewBox="0 0 110 110" aria-hidden="true"><use href="#block"/><text x="47.5" y="89" class="block-letter">A</text></svg>
+        <h3><span class="abc-is">A is for</span> Affection</h3>
+        <p>Every child is greeted by name and with a hug, or a high-five if they'd rather. Warm, consistent care is where all the learning starts.</p>
+      </li>
+      <li class="abc sketch tilt-r">
+        <svg class="abc-block c-blue" viewBox="0 0 110 110" aria-hidden="true"><use href="#block"/><text x="47.5" y="89" class="block-letter">B</text></svg>
+        <h3><span class="abc-is">B is for</span> Belonging</h3>
+        <p>A small group means no one gets lost in the crowd. Every child has a cubby, a job, a spot on the rug, and friends who notice when they're away.</p>
+      </li>
+      <li class="abc sketch tilt-l">
+        <svg class="abc-block c-green" viewBox="0 0 110 110" aria-hidden="true"><use href="#block"/><text x="47.5" y="89" class="block-letter">C</text></svg>
+        <h3><span class="abc-is">C is for</span> Curiosity</h3>
+        <p>We follow the questions. If someone wants to know where the worms go when it rains, that's the afternoon's plan.</p>
+      </li>
+      <li class="abc sketch tilt-r">
+        <svg class="abc-block c-orange" viewBox="0 0 110 110" aria-hidden="true"><use href="#block"/><text x="47.5" y="89" class="block-letter">D</text></svg>
+        <h3><span class="abc-is">D is for</span> Dirt</h3>
+        <p>We go outside every day, rain or shine. Please send play clothes. Some of our best thinking happens with muddy knees.</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============================================================ ENROLL -->
+<section id="enroll" class="enroll">
+  <div class="wrap enroll-grid">
+    <div class="enroll-copy">
+      <p class="eyebrow">Enrollment</p>
+      <h2>Come say hello</h2>
+      <p class="section-intro">
+        The best way to know if Little Lightbulbs is right for your family is to visit. Tell us a little
+        about your child and we'll reach out within one business day to set up a tour.
+      </p>
+
+      <ul class="contact-list">
+        <li>
+          <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M14 8h8l4 10-5 4a18 18 0 0 0 9 9l4-5 10 4v8a4 4 0 0 1-4 4C22 42 6 26 6 12a4 4 0 0 1 4-4z" fill="#FFF8EA"/></svg>
+          <span><span class="contact-label">Call or text</span><a href="tel:+15555550123">[(555) 555-0123]</a></span>
+        </li>
+        <li>
+          <svg viewBox="0 0 48 48" aria-hidden="true"><rect x="6" y="12" width="36" height="26" rx="4" fill="#FFF8EA"/><path d="M6 16l18 12 18-12" fill="none"/></svg>
+          <span><span class="contact-label">Email</span><a href="mailto:hello@example.com">[hello@yourdomain.com]</a></span>
+        </li>
+        <li>
+          <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 42s-13-12-13-22a13 13 0 0 1 26 0c0 10-13 22-13 22z" fill="#FFF8EA"/><circle cx="24" cy="20" r="5" fill="#FFC53D"/></svg>
+          <span><span class="contact-label">Find us</span>[Street address]<br>[City], CA [ZIP]</span>
+        </li>
+        <li>
+          <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="17" fill="#FFF8EA"/><path d="M24 13v11l7 5" fill="none"/></svg>
+          <span><span class="contact-label">Tours</span>Weekday afternoons during nap time, so you can see the space and we can really talk.</span>
+        </li>
+      </ul>
+    </div>
+
+    <!-- To receive submissions: sign up at formspree.io (free), create a form, and replace
+         YOUR_FORM_ID below with your form's ID. Until then, the button shows a friendly note. -->
+    <form class="enroll-form sketch" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <h3>Request a visit</h3>
+      <div class="field">
+        <label for="parent-name">Your name</label>
+        <input id="parent-name" name="name" type="text" autocomplete="name" required>
+      </div>
+      <div class="field-row">
+        <div class="field">
+          <label for="parent-email">Email</label>
+          <input id="parent-email" name="email" type="email" autocomplete="email" required>
+        </div>
+        <div class="field">
+          <label for="parent-phone">Phone</label>
+          <input id="parent-phone" name="phone" type="tel" autocomplete="tel">
+        </div>
+      </div>
+      <div class="field-row">
+        <div class="field">
+          <label for="child-age">Your child is</label>
+          <select id="child-age" name="child_age">
+            <option>On the way</option>
+            <option>An infant (6 weeks to 18 months)</option>
+            <option>A toddler (18 months to 3 years)</option>
+            <option>A preschooler (3 to 5 years)</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="start-date">Hoping to start</label>
+          <input id="start-date" name="start" type="month">
+        </div>
+      </div>
+      <div class="field">
+        <label for="message">Anything we should know? <span class="optional">(optional)</span></label>
+        <textarea id="message" name="message" rows="4" placeholder="Allergies, schedule needs, a favorite dinosaur..."></textarea>
+      </div>
+      <button class="btn btn-primary" type="submit">Send</button>
+      <p class="form-note" hidden>This form isn't connected yet. For now, please call, text, or email using the details on the left.</p>
+      <p class="privacy">We'll only use this to get back to you about a visit.</p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<!-- ============================================================ FOOTER -->
+<footer class="site-footer">
+  <div class="handprint-row" aria-hidden="true">
+    <svg viewBox="0 0 100 120" class="c-red"    style="--r:-14deg"><use href="#handprint"/></svg>
+    <svg viewBox="0 0 100 120" class="c-yellow" style="--r:9deg"><use href="#handprint"/></svg>
+    <svg viewBox="0 0 100 120" class="c-blue"   style="--r:-6deg"><use href="#handprint"/></svg>
+    <svg viewBox="0 0 100 120" class="c-green"  style="--r:12deg"><use href="#handprint"/></svg>
+    <svg viewBox="0 0 100 120" class="c-purple" style="--r:-10deg"><use href="#handprint"/></svg>
+    <svg viewBox="0 0 100 120" class="c-orange" style="--r:7deg"><use href="#handprint"/></svg>
+    <svg viewBox="0 0 100 120" class="c-pink"   style="--r:-4deg"><use href="#handprint"/></svg>
+  </div>
+
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <a class="brand" href="#top">
+        <svg class="brand-mark" viewBox="0 0 200 260" aria-hidden="true"><use href="#bulb"/></svg>
+        <span class="brand-text">
+          <span class="brand-name">Little Lightbulbs</span>
+          <span class="brand-tag">Family Child Care</span>
+        </span>
+      </a>
+      <p>Where bright ideas begin.</p>
+      <p class="license">Licensed by the California Department of Social Services, Community Care Licensing Division. Facility license #[pending].</p>
+    </div>
+    <nav class="footer-nav" aria-label="Footer">
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#programs">Programs</a></li>
+        <li><a href="#day">Our Day</a></li>
+        <li><a href="#abcs">Our ABCs</a></li>
+        <li><a href="#enroll">Enroll</a></li>
+      </ul>
+    </nav>
+    <div class="footer-contact">
+      <h4>Visit</h4>
+      <p>[Street address]<br>[City], CA [ZIP]</p>
+      <p><a href="tel:+15555550123">[(555) 555-0123]</a><br><a href="mailto:hello@example.com">[hello@yourdomain.com]</a></p>
+      <p>Monday to Friday<br>7:00 am to 6:00 pm</p>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <p>&copy; <span id="year">2026</span> Little Lightbulbs Family Child Care. All rights reserved.</p>
+    <p>Made with love and a lot of crayons.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
