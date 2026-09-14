@@ -51,16 +51,10 @@ export function Highlighter({
       padding,
       multiline,
     })
+    // rough-notation watches the element and the window itself and redraws
+    // without animation on resize or font swap, so no extra observers here.
     annotation.show()
-    const ro = new ResizeObserver(() => {
-      annotation.hide()
-      annotation.show()
-    })
-    ro.observe(document.body)
-    return () => {
-      ro.disconnect()
-      annotation.remove()
-    }
+    return () => annotation.remove()
   }, [inView, action, color, strokeWidth, animationDuration, iterations, padding, multiline, reduce])
 
   return (

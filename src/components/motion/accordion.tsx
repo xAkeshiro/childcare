@@ -2,7 +2,7 @@
  * Accordion with animated height, adapted from Motion Primitives (21st.dev).
  * Single-open by default. Uses proper button semantics and aria-expanded.
  */
-import { AnimatePresence, motion } from 'motion/react'
+import { AnimatePresence, m } from 'motion/react'
 import { createContext, useContext, useId, useState, type ReactNode } from 'react'
 import { cn } from '@/lib/utils'
 
@@ -57,7 +57,7 @@ export function AccordionItem({ value, title, children, className }: { value: st
       </h3>
       <AnimatePresence initial={false}>
         {isOpen && (
-          <motion.div
+          <m.div
             id={panelId}
             role="region"
             aria-labelledby={buttonId}
@@ -68,7 +68,7 @@ export function AccordionItem({ value, title, children, className }: { value: st
             className="overflow-hidden"
           >
             <div className="pb-6 pr-12 text-base leading-relaxed text-ink-soft">{children}</div>
-          </motion.div>
+          </m.div>
         )}
       </AnimatePresence>
     </div>

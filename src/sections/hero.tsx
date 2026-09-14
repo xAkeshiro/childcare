@@ -1,4 +1,4 @@
-import { motion } from 'motion/react'
+import { m } from 'motion/react'
 import { Baby, Clock, UtensilsCrossed, Users } from 'lucide-react'
 import { Block, ThoughtBubble, Crayon } from '@/components/brand/illustrations'
 import { Highlighter } from '@/components/motion/highlighter'
@@ -35,10 +35,10 @@ export function Hero() {
                 {hero.secondaryCta.label}
               </Button>
             </div>
-            <p className="mt-7 flex flex-wrap gap-x-2.5 text-[0.9375rem] font-semibold text-ink-soft">
+            <p className="mt-7 flex flex-col gap-y-1 text-[0.9375rem] font-semibold text-ink-soft sm:flex-row sm:flex-wrap sm:gap-x-2.5">
               {hero.proof.map((item, i) => (
                 <span key={item} className="inline-block whitespace-nowrap">
-                  {i > 0 && <span aria-hidden="true" className="mr-2.5 text-line">·</span>}
+                  {i > 0 && <span aria-hidden="true" className="mr-2.5 hidden text-line sm:inline">·</span>}
                   {item}
                 </span>
               ))}
@@ -49,7 +49,7 @@ export function Hero() {
         </div>
 
         {/* At a glance: the four facts a parent scans for, as one contained object. */}
-        <Card as="ul" aria-label="At a glance" className="mt-16 grid grid-cols-1 gap-y-6 p-6 sm:grid-cols-2 md:mt-24 md:grid-cols-4 md:gap-x-8 md:p-8">
+        <Card as="ul" aria-label="At a glance" className="mt-16 grid grid-cols-1 gap-y-6 p-7 sm:grid-cols-2 md:mt-24 md:grid-cols-4 md:gap-x-8">
           {facts.map((fact) => {
             const Icon = factIcons[fact.icon]
             return (
@@ -74,24 +74,24 @@ export function Hero() {
 function HeroArt() {
   return (
     <div className="relative mx-auto hidden aspect-[5/4] w-full max-w-[520px] lg:block" aria-hidden="true">
-      <motion.div
-        className="absolute left-1/2 top-[2%] h-[62%] w-auto -translate-x-1/2"
+      <m.div
+        className="absolute left-1/2 top-0 h-[66%] w-auto -translate-x-1/2"
         animate={{ y: [0, -8, 0] }}
         transition={{ duration: 6, ease: 'easeInOut', repeat: Infinity }}
       >
         <ThoughtBubble className="h-full w-auto" title={`${site.name} mascot`} />
-      </motion.div>
-      <div className="absolute bottom-0 left-[4%] w-[46%]">
+      </m.div>
+      <div className="absolute bottom-0 left-[6%] w-[38%]">
         <div className="relative aspect-[2/1.86]">
           <Block letter="C" className="absolute left-[24%] top-0 w-[50%] text-crayon-green" />
           <Block letter="A" className="absolute bottom-0 left-0 w-[50%] text-crayon-red" />
           <Block letter="B" className="absolute bottom-0 right-0 w-[50%] text-crayon-blue" />
         </div>
       </div>
-      <div className="absolute bottom-[2%] right-[6%] flex items-end gap-1">
-        <Crayon className="h-36 w-auto origin-bottom -rotate-12 text-crayon-purple" />
-        <Crayon className="h-40 w-auto text-crayon-green" />
-        <Crayon className="h-36 w-auto origin-bottom rotate-12 text-crayon-orange" />
+      <div className="absolute bottom-0 right-[10%] flex items-end">
+        <Crayon className="h-36 w-auto origin-bottom -rotate-[18deg] text-crayon-purple" />
+        <Crayon className="-ml-3 h-40 w-auto origin-bottom text-crayon-green" />
+        <Crayon className="-ml-3 h-36 w-auto origin-bottom rotate-[18deg] text-crayon-orange" />
       </div>
     </div>
   )

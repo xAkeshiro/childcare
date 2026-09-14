@@ -27,7 +27,7 @@ export function Programs() {
                 <ul className="mt-6 space-y-2.5 border-t border-line-soft pt-6">
                   {program.points.map((point) => (
                     <li key={point} className="flex items-start gap-2.5 text-[0.9375rem] font-semibold text-ink">
-                      <Check className="mt-1 size-4 shrink-0 text-ink-soft" strokeWidth={2.25} aria-hidden="true" />
+                      <Check className="mt-1 size-4 shrink-0 text-crayon-green-deep" strokeWidth={2.5} aria-hidden="true" />
                       {point}
                     </li>
                   ))}

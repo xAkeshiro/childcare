@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { AnimatePresence, motion } from 'motion/react'
+import { AnimatePresence, m } from 'motion/react'
 import { Menu, X } from 'lucide-react'
 import { ThoughtBubble } from '@/components/brand/illustrations'
 import { Button } from '@/components/ui/button'
@@ -58,7 +58,7 @@ export function Navbar() {
 
         <button
           type="button"
-          className="ml-auto grid size-10 place-items-center rounded-md text-ink md:hidden"
+          className="-mr-1.5 ml-auto grid size-11 place-items-center rounded-md text-ink md:hidden"
           aria-expanded={open}
           aria-controls="site-nav"
           aria-label={open ? 'Close menu' : 'Open menu'}
@@ -69,7 +69,7 @@ export function Navbar() {
 
         <AnimatePresence initial={false}>
           {open && (
-            <motion.nav
+            <m.nav
               id="site-nav"
               aria-label="Main"
               initial={{ opacity: 0, y: -8 }}
@@ -91,7 +91,7 @@ export function Navbar() {
               <Button href="#visit" className="mt-2" onClick={() => setOpen(false)}>
                 Schedule a visit
               </Button>
-            </motion.nav>
+            </m.nav>
           )}
         </AnimatePresence>
       </Container>

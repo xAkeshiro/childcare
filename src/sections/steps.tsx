@@ -7,7 +7,7 @@ import { steps } from '@/content/site'
 /** Enrollment is a real sequence, so the numbers carry information here. */
 export function Steps() {
   return (
-    <Section id="how" hairline className="py-20 md:py-24">
+    <Section id="how" hairline>
       <Container>
         <Reveal>
           <H2>{steps.headline}</H2>

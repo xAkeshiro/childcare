@@ -19,7 +19,7 @@ export function Tuition() {
           </Reveal>
 
           <Reveal delay={0.08}>
-            <Card className="p-7 sm:p-9">
+            <Card className="p-7">
               <div className="flex flex-wrap items-end justify-between gap-x-8 gap-y-4">
                 <div>
                   <Label>{tuition.plan}</Label>

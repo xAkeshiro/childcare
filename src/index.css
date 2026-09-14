@@ -2,6 +2,7 @@
    there first, then here. Tailwind v4 turns each --color-*, --font-*, --text-*,
    --radius-* and --shadow-* into utilities (bg-paper, font-display, text-h2 ...). */
 @import "tailwindcss";
+@source not "../.claude";
 
 @theme {
   /* Ground and surfaces */
@@ -125,7 +126,7 @@
 
 /* Visually hidden but readable by screen readers (skip link, form hints). */
 @utility sr-only-focusable {
-  position: absolute;
+  position: fixed;
   left: 1rem;
   top: -100px;
   &:focus { top: 1rem; }

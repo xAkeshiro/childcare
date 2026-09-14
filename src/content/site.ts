@@ -47,18 +47,17 @@ export const hero = {
   lede: `A licensed family child care home in ${site.city} for eight children, ages 12 months to 5. Home-cooked meals, outside every day, and a daily note at pickup.`,
   primaryCta: { label: 'Schedule a visit', href: '#visit' },
   secondaryCta: { label: 'See our programs', href: '#programs' },
-  proof: ['Licensed in California', 'CPR and first-aid certified', 'Up to 8 children'],
+  proof: ['Licensed in California', 'CPR and first-aid certified'],
 } as const
 
 export const facts = [
   { label: 'Hours', value: 'Mon to Fri, 8:00 am to 4:30 pm', icon: 'clock' },
   { label: 'Ages', value: '12 months to 5 years', icon: 'baby' },
   { label: 'Group size', value: 'Up to 8 children, mixed ages', icon: 'home' },
-  { label: 'Meals', value: 'Breakfast, lunch, and snack included, following USDA MyPlate', icon: 'apple' },
+  { label: 'Meals', value: 'Breakfast, lunch, and snack (USDA MyPlate)', icon: 'apple' },
 ] as const
 
 export const about = {
-  eyebrow: 'About us',
   headline: `Hi, I'm ${site.owner}.`,
   paragraphs: [
     'Little Thinkers is my home and my heart. I opened it because I believe the early years deserve more than a place to wait for pickup. Children this age are doing the hardest, most important learning of their lives, and they do it best when they feel safe, known, and free to get a little messy.',
@@ -77,7 +76,6 @@ export const about = {
 } as const
 
 export const programs = {
-  eyebrow: 'Programs',
   headline: 'Care that grows with your child',
   intro: 'Ages 12 months to 5 years, one small mixed-age group. Siblings stay together, and the youngest learn from watching the oldest.',
   items: [
@@ -109,10 +107,9 @@ export const programs = {
 } as const
 
 export const day = {
-  eyebrow: 'Our day',
   headline: 'A day at Little Thinkers',
   intro:
-    "Young children thrive on rhythm. Our schedule is the same every day, with plenty of room inside it for a long book, a big puddle, or a project that just can't stop yet.",
+    "Young children run on rhythm. Our schedule is the same every day, with plenty of room inside it for a long book, a big puddle, or a project that just can't stop yet.",
   note: 'Younger toddlers nap when they need to, not only at nap time.',
   items: [
     { time: '8:00', title: 'Arrival, breakfast and free play', detail: 'Hugs at the door, then puzzles, blocks, and the play kitchen' },
@@ -128,11 +125,10 @@ export const day = {
 } as const
 
 export const abcs = {
-  eyebrow: 'What we believe',
   headline: 'Our ABCs',
   intro: 'The three things we come back to every single day.',
   items: [
-    { letter: 'A', color: 'red', word: 'Affection', text: "Every child is greeted by name and with a hug, or a high-five if they'd rather. Warm, consistent care is where all the learning starts." },
+    { letter: 'A', color: 'red', word: 'Affection', text: "Every child is greeted by name and with a hug, or a high‑five if they'd rather. Warm, consistent care is where all the learning starts." },
     { letter: 'B', color: 'blue', word: 'Belonging', text: "A small group means no one gets lost in the crowd. Every child has a cubby, a job, a spot on the rug, and friends who notice when they're away." },
     { letter: 'C', color: 'green', word: 'Curiosity', text: "We follow the questions. If someone wants to know where the worms go when it rains, that's the afternoon's plan." },
   ],
@@ -146,18 +142,16 @@ export const tuition = {
   unit: 'per day, per child',
   billing: 'Monday to Friday, 8:00 am to 4:30 pm. Billed monthly.',
   included: [
-    'Breakfast, lunch, and an afternoon snack, planned around USDA MyPlate guidelines',
+    'Breakfast, lunch, and an afternoon snack (USDA MyPlate)',
     'All art, sensory, and learning materials',
     'Outdoor play every day, rain or shine',
     'A daily note and photos at pickup',
-    'Ages 12 months to 5 years',
   ],
   cta: { label: 'Schedule a visit', href: '#visit' },
   note: 'A deposit holds your spot. Ask about sibling enrollment on your visit.',
 } as const
 
 export const steps = {
-  eyebrow: 'How it works',
   headline: 'Three steps to your first day',
   items: [
     { title: 'Visit', text: 'Come by during nap time, see the space, and ask everything. Thirty minutes, no pressure.' },
@@ -167,12 +161,11 @@ export const steps = {
 } as const
 
 export const faq = {
-  eyebrow: 'Questions',
   headline: 'What parents ask',
   items: [
     { q: 'What does it cost?', a: `Full-time care is $${pricing.daily} per day, per child, billed monthly. That covers Monday to Friday, 8:00 am to 4:30 pm, with breakfast, lunch, and an afternoon snack included. A deposit holds your spot.` },
     { q: 'Do you have openings right now?', a: 'Openings come up a few times a year as children move on to kindergarten. If we are full, we keep a short waitlist and reach out in order.' },
-    { q: 'What should my child bring?', a: 'A change of clothes, a water bottle, and anything they need for nap. Meals and snacks are provided. Please label everything.' },
+    { q: 'What should my child bring?', a: 'A change of clothes, a water bottle, and anything they need for nap. Meals and a snack are provided. Please label everything.' },
     { q: 'What is your sick policy?', a: 'Children stay home with a fever, vomiting, diarrhea, or anything contagious, and come back 24 hours after symptoms end. It protects the whole group, including your child.' },
     { q: 'How do naps work?', a: 'Nap and quiet time runs from about 12:30 to 2:30. Older children who no longer nap rest with books. Younger toddlers can nap earlier when they need to.' },
     { q: 'Are you licensed?', a: `Yes. Little Thinkers is licensed by the California Department of Social Services, Community Care Licensing Division (facility license #${site.license}). The license is posted inside, and you are welcome to look it up.` },
@@ -182,14 +175,13 @@ export const faq = {
 } as const
 
 export const visit = {
-  eyebrow: 'Enrollment',
   headline: 'Come say hello',
   intro:
-    'The best way to know if Little Thinkers is right for your family is to visit. Tell us a little about your child and we will reach out within one business day to set up a tour.',
-  tours: 'Weekday afternoons during nap time, so you can see the space and we can really talk.',
+    'The best way to know if Little Thinkers is right for your family is to visit. Tell us a little about your child and we will reach out within one business day to set up a tour. Tours happen during nap time, so you can see the space and we can really talk.',
+  tours: 'Weekday afternoons, during nap time',
   form: {
     title: 'Request a visit',
-    childOptions: ['On the way', 'An infant (6 weeks to 18 months)', 'A toddler (18 months to 3 years)', 'A preschooler (3 to 5 years)'],
+    childOptions: ['On the way', 'A young toddler (12 to 24 months)', 'A toddler (2 to 3 years)', 'A preschooler (3 to 5 years)'],
     messagePlaceholder: 'Allergies, schedule needs, a favorite dinosaur...',
     submit: 'Send request',
     privacy: 'We only use this to get back to you about a visit.',

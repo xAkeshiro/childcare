@@ -8,7 +8,7 @@ export function Faq() {
   return (
     <Section id="faq" hairline>
       <Container>
-        <div className="grid gap-10 lg:grid-cols-[0.6fr_1.4fr] lg:gap-20">
+        <div className="grid gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.6fr)] lg:gap-16">
           <Reveal>
             <H2>{faq.headline}</H2>
             <p className="mt-4 text-ink-soft">Anything else? Ask on your visit, or send a note below.</p>

@@ -37,9 +37,9 @@ export function About() {
               ))}
             </div>
             <blockquote className="mt-9 max-w-[30rem] font-display text-[1.75rem] font-semibold leading-[1.3] text-ink">
-              Every child has{' '}
+              Every child has little{' '}
               <Highlighter action="underline" color="var(--color-marker)" strokeWidth={3} padding={1} iterations={2}>
-                little aha moments
+                aha moments
               </Highlighter>
               , the second something clicks and their whole face lights up. My job is to make room for as many of those as possible.
             </blockquote>

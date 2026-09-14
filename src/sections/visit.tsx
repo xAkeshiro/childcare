@@ -56,7 +56,7 @@ export function Visit() {
                 <IconCircle><Clock className="size-5" strokeWidth={1.75} aria-hidden="true" /></IconCircle>
                 <div>
                   <Label>Tours</Label>
-                  <p className="mt-1 text-[0.9375rem] font-semibold text-ink-soft">{visit.tours}</p>
+                  <p className="mt-1 font-bold text-ink">{visit.tours}</p>
                 </div>
               </li>
             </ul>
@@ -70,7 +70,7 @@ export function Visit() {
           </Reveal>
 
           <Reveal delay={0.08}>
-            <Card as="form" action={site.formAction} method="POST" onSubmit={onSubmit} className="p-6 sm:p-8">
+            <Card as="form" action={site.formAction} method="POST" onSubmit={onSubmit} className="p-7">
               <H3>{visit.form.title}</H3>
               <div className="mt-6 grid gap-5">
                 <div>
@@ -107,15 +107,17 @@ export function Visit() {
                   </label>
                   <textarea id="message" name="message" rows={4} placeholder={visit.form.messagePlaceholder} className={field} />
                 </div>
-                <div className="flex flex-wrap items-center gap-x-6 gap-y-3 pt-1">
-                  <Button type="submit" size="lg">{visit.form.submit}</Button>
+                <div className="flex flex-col gap-3 pt-1 sm:flex-row sm:items-center sm:gap-x-6">
+                  <Button type="submit" size="lg" className="w-full sm:w-auto">{visit.form.submit}</Button>
                   <p className="text-[0.875rem] text-ink-soft">{visit.form.privacy}</p>
                 </div>
-                {notice && (
-                  <p role="status" className="rounded-sm bg-accent-soft px-4 py-3 text-[0.9375rem] font-semibold text-ink">
-                    {notice}
-                  </p>
-                )}
+                <p
+                  role="status"
+                  aria-live="polite"
+                  className={notice ? 'rounded-sm bg-accent-soft px-4 py-3 text-[0.9375rem] font-semibold text-ink' : 'sr-only'}
+                >
+                  {notice ?? ''}
+                </p>
               </div>
             </Card>
           </Reveal>

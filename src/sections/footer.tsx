@@ -13,7 +13,7 @@ export function Footer() {
               <ThoughtBubble className="h-8 w-auto" />
               <span className="flex flex-col leading-none">
                 <span className="font-display text-[1.125rem] font-semibold text-ink">{site.name}</span>
-                <span className="mt-0.5 text-label font-bold uppercase text-ink-soft">{site.descriptor}</span>
+                <span className="mt-0.5 hidden text-label font-bold uppercase text-ink-soft sm:block">{site.descriptor}</span>
               </span>
             </a>
             <p className="mt-5 font-display text-lede font-semibold text-ink">{site.tagline}</p>

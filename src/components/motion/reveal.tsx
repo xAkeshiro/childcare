@@ -4,8 +4,19 @@
  * opacity 0→1 and a 12px rise, ~0.45s, once. Honors reduced motion through
  * the MotionConfig in main.tsx.
  */
-import { motion, type Transition, type Variants } from 'motion/react'
+import { m, type Transition, type Variants } from 'motion/react'
 import type { ComponentPropsWithoutRef, ElementType, ReactNode } from 'react'
+
+// One motion component per tag, created once, so Reveal never remounts its children.
+const cache = new Map<ElementType, typeof m.div>()
+function motionFor(tag: ElementType) {
+  let component = cache.get(tag)
+  if (!component) {
+    component = m.create(tag as 'div') as typeof m.div
+    cache.set(tag, component)
+  }
+  return component
+}
 
 type RevealProps = {
   children: ReactNode
@@ -27,12 +38,12 @@ export function Reveal({
   className,
   delay = 0,
   y = 12,
-  amount = 0.25,
+  amount = 0.1,
   once = true,
   transition,
   ...rest
 }: RevealProps) {
-  const Component = motion.create(as as keyof HTMLElementTagNameMap)
+  const Component = motionFor(as)
   const variants: Variants = {
     hidden: { opacity: 0, y },
     visible: { opacity: 1, y: 0 },
