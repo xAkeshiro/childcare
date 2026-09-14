@@ -1,6 +1,6 @@
 ---
 name: framer-motion
-description: Motion for React (the current name of Framer Motion, npm package `motion`) as used on the Little Lightbulbs site. Load when adding, changing, or reviewing any animation, transition, scroll reveal, hover state, or reduced-motion behavior in src/. Encodes the brand's "light effects" rules so motion stays subtle and consistent.
+description: Motion for React (the current name of Framer Motion, npm package `motion`) as used on the Little Thinkers site. Load when adding, changing, or reviewing any animation, transition, scroll reveal, hover state, or reduced-motion behavior in src/. Encodes the brand's "light effects" rules so motion stays subtle and consistent.
 ---
 
 # Motion for React on this site

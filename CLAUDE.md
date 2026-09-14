@@ -1,4 +1,4 @@
-# Little Lightbulbs website
+# Little Thinkers website
 
 Marketing site for a licensed family child care home in California. Vite + React 19 +
 TypeScript + Tailwind CSS v4 + Motion (`motion/react`). No backend.

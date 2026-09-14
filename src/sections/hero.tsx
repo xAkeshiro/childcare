@@ -17,7 +17,7 @@ export function Hero() {
         <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
           <div className="max-w-[36rem]">
             {/* On phones the mascot sits above the headline; the full scene shows from lg up. */}
-            <Bulb className="mb-6 h-24 w-auto lg:hidden" title="The Little Lightbulbs mascot, a smiling lightbulb" />
+            <Bulb className="mb-6 h-24 w-auto lg:hidden" title="The Little Thinkers mascot, a smiling lightbulb" />
             <p className="text-[0.9375rem] font-semibold text-ink-soft">{hero.eyebrow}</p>
             <h1 className="mt-3 font-display text-h1 font-semibold text-ink">
               {hero.headline.before}

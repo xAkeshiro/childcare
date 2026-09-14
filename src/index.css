@@ -1,4 +1,4 @@
-/* Little Lightbulbs design tokens. Every value comes from BRAND.md; change it
+/* Little Thinkers design tokens. Every value comes from BRAND.md; change it
    there first, then here. Tailwind v4 turns each --color-*, --font-*, --text-*,
    --radius-* and --shadow-* into utilities (bg-paper, font-display, text-h2 ...). */
 @import "tailwindcss";

@@ -1,4 +1,4 @@
-# Little Lightbulbs Family Child Care
+# Little Thinkers Family Child Care
 
 Website for a licensed family child care home in California. Built with Vite, React 19,
 TypeScript, Tailwind CSS v4, and Motion (the current name of Framer Motion), using

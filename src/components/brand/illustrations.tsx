@@ -1,5 +1,5 @@
 /**
- * The Little Lightbulbs illustration system. Every drawing is an inline SVG
+ * The Little Thinkers illustration system. Every drawing is an inline SVG
  * that takes its color from `currentColor`, so `className="text-crayon-red"`
  * paints it. Keep strokes at 6 units in a 200-unit box (about 3px at 100px).
  */

@@ -4,7 +4,7 @@
  */
 
 export const site = {
-  name: 'Little Lightbulbs',
+  name: 'Little Thinkers',
   descriptor: 'Family Child Care',
   tagline: 'Where bright ideas begin.',
   city: '[City]',
@@ -61,7 +61,7 @@ export const about = {
   eyebrow: 'About us',
   headline: `Hi, I'm ${site.owner}.`,
   paragraphs: [
-    'Little Lightbulbs is my home and my heart. I opened it because I believe the early years deserve more than a place to wait for pickup. Children this age are doing the hardest, most important learning of their lives, and they do it best when they feel safe, known, and free to get a little messy.',
+    'Little Thinkers is my home and my heart. I opened it because I believe the early years deserve more than a place to wait for pickup. Children this age are doing the hardest, most important learning of their lives, and they do it best when they feel safe, known, and free to get a little messy.',
     'Our days are play-based and unhurried. We read a lot, sing a lot, paint with our hands, count the snap peas at lunch, and go outside every day, rain or shine. Parents get a daily note, photos, and a real conversation at pickup, not just a clipboard.',
   ],
   quote:
@@ -110,7 +110,7 @@ export const programs = {
 
 export const day = {
   eyebrow: 'Our day',
-  headline: 'A day at Little Lightbulbs',
+  headline: 'A day at Little Thinkers',
   intro:
     "Young children thrive on rhythm. Our schedule is the same every day, with plenty of room inside it for a long book, a big puddle, or a project that just can't stop yet.",
   note: 'Younger toddlers nap when they need to, not only at nap time.',
@@ -176,7 +176,7 @@ export const faq = {
     { q: 'What should my child bring?', a: 'A change of clothes, a water bottle, and anything they need for nap. Meals and snacks are provided. Please label everything.' },
     { q: 'What is your sick policy?', a: 'Children stay home with a fever, vomiting, diarrhea, or anything contagious, and come back 24 hours after symptoms end. It protects the whole group, including your child.' },
     { q: 'How do naps work?', a: 'Nap and quiet time runs from about 12:30 to 2:30. Older children who no longer nap rest with books. Younger toddlers can nap earlier when they need to.' },
-    { q: 'Are you licensed?', a: `Yes. Little Lightbulbs is licensed by the California Department of Social Services, Community Care Licensing Division (facility license #${site.license}). The license is posted inside, and you are welcome to look it up.` },
+    { q: 'Are you licensed?', a: `Yes. Little Thinkers is licensed by the California Department of Social Services, Community Care Licensing Division (facility license #${site.license}). The license is posted inside, and you are welcome to look it up.` },
     { q: 'What do the children eat?', a: 'Home-cooked breakfast, lunch, and an afternoon snack, planned around the USDA MyPlate guidelines: fruits and vegetables at every meal, whole grains, protein, and dairy or a substitute. Allergies and family preferences are always accommodated.' },
     { q: 'What are your holidays?', a: 'We close on major federal holidays and for one week each summer and winter. The full calendar goes out at enrollment and again each January.' },
   ],
@@ -186,7 +186,7 @@ export const visit = {
   eyebrow: 'Enrollment',
   headline: 'Come say hello',
   intro:
-    'The best way to know if Little Lightbulbs is right for your family is to visit. Tell us a little about your child and we will reach out within one business day to set up a tour.',
+    'The best way to know if Little Thinkers is right for your family is to visit. Tell us a little about your child and we will reach out within one business day to set up a tour.',
   tours: 'Weekday afternoons during nap time, so you can see the space and we can really talk.',
   form: {
     title: 'Request a visit',
