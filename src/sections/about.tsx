@@ -14,11 +14,11 @@ export function About() {
           <Reveal className="mx-auto w-full max-w-[420px] lg:max-w-none">
             {/* Photo in a white mat, the one floating object on the page. Replace the placeholder with
                 <img src="/photo.jpg" alt={about.photoAlt} className="aspect-[4/5] w-full rounded-lg object-cover" /> */}
-            <figure className="m-0 -rotate-1 rounded-xl border border-line bg-white p-3 shadow-lift">
+            <figure className="m-0 -rotate-1 rounded-md border border-line bg-white p-3 shadow-lift">
               <div
                 role="img"
                 aria-label="Photo placeholder"
-                className="grid aspect-[4/5] w-full place-items-center rounded-lg bg-[linear-gradient(160deg,var(--color-paper)_0%,var(--color-accent-soft)_100%)] text-center"
+                className="grid aspect-[4/5] w-full place-items-center rounded-xs bg-[linear-gradient(160deg,var(--color-paper)_0%,var(--color-accent-soft)_100%)] text-center"
               >
                 <div className="px-6">
                   <ThoughtBubble className="mx-auto h-24 w-auto" />

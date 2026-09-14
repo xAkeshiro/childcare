@@ -9,7 +9,7 @@ import { H2, H3, Label, Lede } from '@/components/ui/typography'
 import { site, visit } from '@/content/site'
 
 const field =
-  'w-full rounded-md border border-line bg-white px-3.5 py-3 text-base text-ink placeholder:text-ink-soft/70 transition-[border-color,box-shadow] duration-200 focus:border-accent focus:outline-none focus:ring-4 focus:ring-ring/25'
+  'w-full rounded-sm border border-line-strong bg-white px-3.5 py-3 text-base text-ink placeholder:text-ink-mute transition-[border-color,box-shadow] duration-200 focus:border-accent focus:outline-none focus:ring-4 focus:ring-ring/25'
 const labelClass = 'mb-1.5 block text-[0.9375rem] font-bold text-ink'
 
 export function Visit() {
@@ -112,7 +112,7 @@ export function Visit() {
                   <p className="text-[0.875rem] text-ink-soft">{visit.form.privacy}</p>
                 </div>
                 {notice && (
-                  <p role="status" className="rounded-md bg-accent-soft px-4 py-3 text-[0.9375rem] font-semibold text-ink">
+                  <p role="status" className="rounded-sm bg-accent-soft px-4 py-3 text-[0.9375rem] font-semibold text-ink">
                     {notice}
                   </p>
                 )}

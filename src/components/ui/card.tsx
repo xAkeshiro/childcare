@@ -18,7 +18,7 @@ export function Card<T extends ElementType = 'div'>({
 export function IconCircle({ className, ...props }: ComponentPropsWithoutRef<'span'>) {
   return (
     <span
-      className={cn('grid size-10 shrink-0 place-items-center rounded-full border border-line bg-paper-2 text-ink', className)}
+      className={cn('grid size-10 shrink-0 place-items-center rounded-full border border-line bg-paper text-ink', className)}
       {...props}
     />
   )

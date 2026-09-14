@@ -14,7 +14,7 @@ export function Steps() {
         </Reveal>
         <AnimatedGroup as="ol" className="mt-10 grid gap-10 md:grid-cols-3 md:gap-8" asChild="li">
           {steps.items.map((step, i) => (
-            <div key={step.title} className="border-t-2 border-ink pt-5">
+            <div key={step.title} className="border-t border-line-strong pt-5">
               <span className="font-display text-lede font-semibold text-accent tabular-nums">0{i + 1}</span>
               <H3 className="mt-2">{step.title}</H3>
               <p className="mt-2 text-ink-soft">{step.text}</p>

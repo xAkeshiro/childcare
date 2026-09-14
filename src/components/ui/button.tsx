@@ -3,19 +3,18 @@ import { ArrowRight } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
 /**
- * Button. The brand allows exactly one solid button color (accent blue) and
- * quiet secondaries. `link` renders as a text link with the marker underline,
+ * Button. The brand allows exactly one solid button (accent blue) and no
+ * secondary button. `link` renders as a text link with the marker underline,
  * for the "second action" next to a primary button.
  */
-type Variant = 'primary' | 'secondary' | 'link'
+type Variant = 'primary' | 'link'
 type Size = 'sm' | 'md' | 'lg'
 
 const base =
-  'inline-flex items-center justify-center gap-2 whitespace-nowrap font-sans font-bold transition-[background-color,border-color,box-shadow,transform,text-decoration-color] duration-200 ease-out select-none focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-ring/30 disabled:pointer-events-none disabled:opacity-50'
+  'inline-flex items-center justify-center gap-2 whitespace-nowrap font-sans font-bold transition-[background-color,box-shadow,text-decoration-color] duration-200 ease-out select-none focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-ring/30 disabled:pointer-events-none disabled:opacity-50'
 
 const variants: Record<Variant, string> = {
-  primary: 'rounded-md bg-accent text-white shadow-soft hover:bg-accent-hover hover:-translate-y-px active:translate-y-0',
-  secondary: 'rounded-md border border-line bg-paper-2 text-ink hover:border-ink/30 hover:-translate-y-px active:translate-y-0',
+  primary: 'rounded-md bg-accent text-white hover:bg-accent-hover active:bg-accent-hover',
   link: 'rounded-sm px-0 text-ink underline decoration-marker decoration-[3px] underline-offset-[6px] hover:decoration-accent',
 }
 
