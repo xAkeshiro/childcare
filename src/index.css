@@ -1,0 +1,130 @@
+/* Little Lightbulbs design tokens. Every value comes from BRAND.md; change it
+   there first, then here. Tailwind v4 turns each --color-*, --font-*, --text-*,
+   --radius-* and --shadow-* into utilities (bg-paper, font-display, text-h2 ...). */
+@import "tailwindcss";
+
+@theme {
+  /* Ground and surfaces */
+  --color-paper: #FFF6E5;
+  --color-paper-2: #FFFDF8;
+  --color-line: #DCCDB3;
+  --color-line-soft: #EDE3CF;
+
+  /* Ink */
+  --color-ink: #2F2A44;
+  --color-ink-soft: #5C566F;
+
+  /* The one interactive accent */
+  --color-accent: #2458C4;
+  --color-accent-hover: #1E4DB0;
+  --color-accent-soft: #E8EFFB;
+  --color-ring: #2458C4;
+
+  /* Marker (the highlight) */
+  --color-marker: #FFC53D;
+
+  /* The crayon box: illustration only, plus the -deep variants for small text */
+  --color-crayon-red: #E84855;
+  --color-crayon-red-deep: #C22D3B;
+  --color-crayon-orange: #F58A2B;
+  --color-crayon-orange-deep: #B85C0A;
+  --color-crayon-yellow: #FFC53D;
+  --color-crayon-green: #3FA85B;
+  --color-crayon-green-deep: #237A3C;
+  --color-crayon-blue: #3C7FE0;
+  --color-crayon-blue-deep: #2458C4;
+  --color-crayon-purple: #8B5CD6;
+  --color-crayon-pink: #F27BA5;
+
+  /* Type */
+  --font-display: "Fredoka", "Nunito", ui-rounded, system-ui, sans-serif;
+  --font-sans: "Nunito", ui-rounded, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-hand: "Patrick Hand", "Segoe Print", "Bradley Hand", cursive;
+
+  /* Six-step scale: h1 56/60, h2 40/44, h3 24/30, lede 18/28, body 16/26, label 13/16 */
+  --text-h1: clamp(2.5rem, 1.6rem + 3.2vw, 3.5rem);
+  --text-h1--line-height: 1.07;
+  --text-h1--letter-spacing: -0.02em;
+  --text-h2: clamp(1.875rem, 1.35rem + 1.8vw, 2.5rem);
+  --text-h2--line-height: 1.1;
+  --text-h2--letter-spacing: -0.015em;
+  --text-h3: 1.5rem;
+  --text-h3--line-height: 1.25;
+  --text-lede: 1.125rem;
+  --text-lede--line-height: 1.55;
+  --text-body: 1rem;
+  --text-body--line-height: 1.625;
+  --text-label: 0.8125rem;
+  --text-label--line-height: 1.25;
+  --text-label--letter-spacing: 0.08em;
+
+  /* Shape */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+  --radius-2xl: 28px;
+
+  /* Surface elevation: hairline first, shadow only for the one floating object */
+  --shadow-soft: 0 1px 2px rgba(47, 42, 68, 0.06);
+  --shadow-lift: 0 8px 24px rgba(47, 42, 68, 0.10);
+  --shadow-float: 0 24px 60px -24px rgba(47, 42, 68, 0.28);
+
+  /* Motion */
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5.5rem;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+  }
+  body {
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: var(--text-body);
+    line-height: var(--text-body--line-height);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  ::selection {
+    background-color: color-mix(in srgb, var(--color-marker) 55%, transparent);
+  }
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    text-wrap: balance;
+    color: var(--color-ink);
+  }
+  p { text-wrap: pretty; }
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+  button, [role="button"], a { cursor: pointer; }
+  input, select, textarea { font: inherit; color: inherit; }
+}
+
+/* Ruled paper for the daily schedule: a hairline every 32px, text sits on the rule. */
+@utility ruled-paper {
+  background-color: var(--color-paper-2);
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0 31px,
+    color-mix(in srgb, var(--color-line-soft) 70%, transparent) 31px 32px
+  );
+  background-size: 100% 32px;
+}
+
+/* Visually hidden but readable by screen readers (skip link, form hints). */
+@utility sr-only-focusable {
+  position: absolute;
+  left: 1rem;
+  top: -100px;
+  &:focus { top: 1rem; }
+}

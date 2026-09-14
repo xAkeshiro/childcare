@@ -1,74 +1,80 @@
 # Little Lightbulbs Family Child Care
 
-A simple, single-page website for a licensed family child care home in California.
-Plain HTML, CSS, and a few lines of JavaScript. No build step, no frameworks.
+Website for a licensed family child care home in California. Built with Vite, React 19,
+TypeScript, Tailwind CSS v4, and Motion (the current name of Framer Motion), using
+components adapted from the 21st.dev ecosystem (Motion Primitives, Magic UI).
 
-The look: crayons, alphabet blocks, painted handprints, construction paper, and a
-smiling lightbulb mascot.
+The look: crayons, alphabet blocks, painted handprints, warm paper, and a smiling lightbulb
+mascot, held together by the brand kit in `BRAND.md`.
 
-## Files
+## Run it
 
-| File | What it is |
+```sh
+npm install
+npm run dev        # http://localhost:5173
+npm run build      # typecheck + production build to dist/
+npm run preview    # serve the production build locally
+```
+
+Node 20 or newer.
+
+## Where things live
+
+| Path | What it is |
 | --- | --- |
-| `index.html` | The whole site (header, hero, facts, about, programs, daily schedule, our ABCs, enrollment form, footer) |
-| `styles.css` | All styling. Colors and fonts live in the `:root` block at the top |
-| `script.js` | Mobile menu, copyright year, and the "form isn't connected yet" notice |
-| `assets/favicon.svg` | Browser tab icon |
-| `assets/og.png` | Preview image when the link is shared in texts or social media |
-| `rename.sh` | Changes the business name everywhere in one go |
-| `NAME-RESEARCH.md` | Why the site isn't called Little Thinkers, and the alternatives that were checked |
-
-## See it
-
-Open `index.html` in any browser. That's it.
+| `src/content/site.ts` | Every word on the site: copy, hours, ages, tuition, contact details, FAQ |
+| `src/index.css` | Design tokens (`@theme`) and base styles |
+| `src/fonts.css` + `public/fonts/` | Self-hosted Fredoka, Nunito, and Patrick Hand |
+| `src/sections/` | One file per section, in page order (navbar, hero, about, programs, day, tuition, abcs, steps, faq, visit, footer) |
+| `src/components/ui/` | Button, Card, Container, Section, headings, labels |
+| `src/components/motion/` | Reveal, AnimatedGroup, Accordion, Highlighter |
+| `src/components/brand/illustrations.tsx` | Bulb mascot, handprint, crayon, alphabet block, star, sun |
+| `BRAND.md` | The brand kit |
+| `NAME-RESEARCH.md` | Why the site isn't called Little Thinkers, and the alternatives checked |
+| `.claude/skills/` | Project skills: framer-motion, 21st-dev-components, ui-ux-pro-max |
+| `rename.sh` | Changes the business name everywhere |
 
 ## Fill in the blanks
 
-Search `index.html` for `[` to find every placeholder. There are only a few:
+Open `src/content/site.ts`. Everything in `[square brackets]` is a placeholder:
 
-- `[City]`, `[Street address]`, `[ZIP]`
-- `[(555) 555-0123]` and the `tel:` link next to it
-- `[hello@yourdomain.com]` and the `mailto:` link next to it
-- `[Name]`, `[units or degree]`, `[X] years`
-- `Facility license #[pending]` in the footer
-- The photo: replace the `photo-placeholder` block in the About section with an `<img>` (there is a comment showing how)
+- `city`, `address`, `phone`, `email`, `license`, `owner`
+- In `about`: the credentials list (`[units or degree]`, `[X] years`)
+- The photo: in `src/sections/about.tsx`, replace the placeholder block with an `<img>` (there is a comment showing how). Put the file in `public/`.
 
-Hours, ages, group size, meals, the daily schedule, and all the copy are real starting
-text. Change anything that doesn't match how the program actually runs.
+Tuition is computed in `pricing`: $1,000 a month divided by the average 21.67 weekdays in a
+month, shown as $46 a day. Change `monthly` there and every mention updates.
 
 ## Change the name
 
 ```sh
 ./rename.sh "Little Thinking Caps"
+npm run build
 ```
-
-This swaps the name in `index.html` and this README. It works on Mac and Linux. On
-Windows, use your editor's find-and-replace for the current name instead.
 
 ## Connect the form
 
-The "Request a visit" form uses [Formspree](https://formspree.io) (free for small volumes):
-
-1. Create a Formspree account and a new form.
-2. Copy the form ID and replace `YOUR_FORM_ID` in the form's `action` attribute in `index.html`.
-
-Until that's done, pressing Send shows a friendly note pointing people to the phone number and email.
+The "Request a visit" form posts to [Formspree](https://formspree.io) (free for small volumes).
+Create a form there and replace `YOUR_FORM_ID` in `site.formAction`. Until then, pressing
+Send shows a note pointing people to the phone number and email.
 
 ## Put it online
 
-Any static host works. Two easy options:
+**GitHub Pages (free, automatic).** The workflow in `.github/workflows/deploy.yml` builds and
+publishes the site on every push to `main`. One-time setup: in the repository settings, open
+Pages and set Source to "GitHub Actions".
 
-- **GitHub Pages**: in the repository settings, open Pages, choose the `main` branch and the root folder. The site appears at `https://<username>.github.io/<repo>/`.
-- **Netlify or Vercel**: connect the repository, or drag the folder onto their dashboard. Both give a free URL and let you attach a custom domain.
+**Netlify or Vercel.** Import the repository; build command `npm run build`, output
+directory `dist`.
 
-Domains that were available when this was built: `littlelightbulbschildcare.com` and
-`littlelightbulbspreschool.com` (about $11 a year).
+After deploying, set `og:image` in `index.html` to the full `https://` URL of `og.png` so link
+previews show the image.
 
-After deploying, set the `og:image` meta tag in `index.html` to the full `https://` URL of `assets/og.png` so link previews show the image.
+## Brand and design tools
 
-## Change colors or fonts
-
-Everything is a token at the top of `styles.css`. The crayon colors are `--red`, `--orange`,
-`--yellow`, `--green`, `--blue`, `--purple`, and `--pink`. The paper colors are `--paper`,
-`--sky`, `--mint`, and `--lavender`. Fonts are loaded from Google Fonts in the `<head>` of
-`index.html` (Fredoka for headings, Nunito for text, Patrick Hand for the handwritten bits).
+- `BRAND.md` documents every token, the type scale, illustration rules, motion rules, and
+  the page blueprint. Change the kit first, then `src/index.css`.
+- The UI/UX Pro Max skill is installed in `.claude/skills/ui-ux-pro-max`. Example:
+  `python3 .claude/skills/ui-ux-pro-max/scripts/search.py "form validation" --domain ux`.
+- Fonts were fetched from Google Fonts (SIL Open Font License) and saved locally. To change
+  families, download the new `.woff2` files into `public/fonts/` and update `src/fonts.css`.

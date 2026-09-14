@@ -1,4 +1,7 @@
+node_modules/
+dist/
 .DS_Store
 Thumbs.db
 *.bak
-node_modules/
+*.local
+__pycache__/
