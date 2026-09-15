@@ -10,7 +10,7 @@ fed real food, and taken outside every day. The brand is warm and specific, neve
 its own sake. It borrows Cluely's discipline (one ground, one accent, whitespace as the
 divider, hairline borders, a strict type scale) and applies it to an identity that is
 warmer than any software company: crayons, alphabet blocks, painted handprints, and a
-thought bubble with a smile.
+cartoon kid beaming with an idea.
 
 **Voice.** A warm, specific owner talking to a parent at pickup. First person. Plain words,
 short sentences, one concrete detail per claim. Calm and certain about safety, licensing,
@@ -33,11 +33,12 @@ stay in [square brackets]; never invent a city, name, phone, or license number.
 
 ## 2. Logo and mascot
 
-**The mark** is a thought bubble with a smile: ink outline (6 units in a 200-unit box),
-paper-white fill, two trailing puffs at the lower left, rosy cheeks, and a small yellow
-star spark at the upper right. It says "thinking" in one glance and keeps the friendly
-face at every size. Source: `ThoughtBubble` in `src/components/brand/illustrations.tsx`.
-Favicon: `public/favicon.svg`.
+**The mark** is a simple cartoon kid beaming with an idea: a round face in ink outline
+(6 units in a 200-unit box) with a paper-white fill, an ink hair cap, dot eyes, a smile,
+rosy cheeks, little ears, and seven crayon-orange excitement rays radiating from the top of
+the head. The rays are the "little thinker" moment; the face keeps it friendly at every
+size. Source: `Kid` in `src/components/brand/illustrations.tsx`. Favicon:
+`public/favicon.svg`.
 
 **Wordmark.** "Little Thinkers" in Fredoka 600, ink, always on one line. "Family Child
 Care" beneath it in the 13px label style (ink-soft), hidden on phones.
@@ -48,7 +49,7 @@ the headline on phones, favicon 64-unit box. Never below 24px.
 **Clear space.** At least half the mark's height on every side. Nothing overlaps it.
 
 **Don't.** Recolor the outline, add gradients or shadows, rotate it, place it on a tinted
-band, use it as a bullet, or pair it with a second mascot. The bubble appears as logo
+band, use it as a bullet, or pair it with a second mascot. The kid appears as logo
 (header, footer, favicon, share image) and as the hero subject. Nowhere else.
 
 ## 3. Color
@@ -78,8 +79,8 @@ ground named in each row.
 | `crayon-blue` | #3C7FE0 | Fill only: block B, the blue handprint, the Toddlers card edge | never text |
 | `crayon-green` | #3FA85B | Fill only: block C, the green handprint, the Preschool card edge | never text |
 | `crayon-green-deep` | #237A3C | Check marks in credential and tuition lists | 5.0:1 on paper |
-| `crayon-orange` | #F58A2B | Fill only: the third crayon in the hero fan | never text |
-| `crayon-yellow` | #FFC53D | Fill only: the star spark on the mascot | never text |
+| `crayon-orange` | #F58A2B | Fill only: the mascot's rays, the third crayon in the hero fan | never text |
+| `crayon-yellow` | #FFC53D | Same value as `marker`; reserved for drawings | never text |
 | `crayon-purple` | #8B5CD6 | Fill only: the first crayon in the hero fan | never text |
 | `crayon-pink` | #F27BA5 | Fill only: the mascot's cheeks at 60% | never text |
 
@@ -149,7 +150,7 @@ joins, no gradients, no shadows, no wobble filters. Every drawing takes its colo
 
 | Asset | Where it appears | Where it must not |
 | --- | --- | --- |
-| Thought bubble | Header, footer, favicon, share image, hero subject, the photo placeholder | Bullets, cards, backgrounds |
+| The kid | Header, footer, favicon, share image, hero subject, the photo placeholder | Bullets, cards, backgrounds |
 | Alphabet blocks | The hero stack (A, B, C) and Our ABCs at 96px, where the letters are the content | Program cards, icons |
 | Crayons | The fan in the hero, three colors, grounded at the bottom right | Anywhere else |
 | Handprints | One cluster of three overlapping prints in the Visit section | Rows, footers, backgrounds |

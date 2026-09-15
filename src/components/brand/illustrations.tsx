@@ -12,28 +12,21 @@ function a11y(title?: string) {
   return title ? { role: 'img' as const, 'aria-label': title } : { 'aria-hidden': true as const }
 }
 
-/** The mascot: a smiling thought bubble with a star spark. Fills are fixed brand colors; the outline uses currentColor. */
-export function ThoughtBubble({ title, className, ...props }: Svg) {
+/** The mascot: a simple cartoon kid beaming with an idea. Rays are crayon orange; the outline uses currentColor. */
+export function Kid({ title, className, ...props }: Svg) {
   return (
     <svg viewBox="0 0 200 200" className={cn('text-ink', className)} {...a11y(title)} {...props}>
       <g stroke="currentColor" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round">
-        <path
-          d="M40 100 A30 30 0 0 1 60 48 A34 34 0 0 1 108 34 A30 30 0 0 1 150 56 A28 28 0 0 1 160 106 A30 30 0 0 1 118 130 A32 32 0 0 1 70 128 A26 26 0 0 1 40 100 Z"
-          fill="var(--color-paper-2)"
-        />
-        <circle cx="52" cy="152" r="13" fill="var(--color-paper-2)" />
-        <circle cx="34" cy="180" r="7" fill="var(--color-paper-2)" />
-        <circle cx="86" cy="84" r="6" fill="currentColor" stroke="none" />
-        <circle cx="114" cy="84" r="6" fill="currentColor" stroke="none" />
-        <path d="M84 100 Q100 116 116 100" fill="none" />
-        <circle cx="70" cy="98" r="7" fill="var(--color-crayon-pink)" stroke="none" opacity=".6" />
-        <circle cx="130" cy="98" r="7" fill="var(--color-crayon-pink)" stroke="none" opacity=".6" />
-        <polygon
-          points="50,6 61,38 95,38 68,59 79,92 50,72 21,92 32,59 5,38 39,38"
-          fill="var(--color-crayon-yellow)"
-          strokeWidth="14"
-          transform="translate(150 4) scale(0.38)"
-        />
+        <path d="M100 52L100 26 M129 59L139 39 M71 59L61 39 M151 76L166 63 M49 76L34 63 M161 98L178 93 M39 98L22 93" fill="none" stroke="var(--color-crayon-orange)" />
+        <circle cx="50" cy="124" r="10" fill="var(--color-paper-2)" />
+        <circle cx="150" cy="124" r="10" fill="var(--color-paper-2)" />
+        <circle cx="100" cy="118" r="52" fill="var(--color-paper-2)" />
+        <path d="M52 110 C56 78 78 66 100 66 C122 66 144 78 148 110 C138 100 128 98 120 106 C112 96 88 96 80 106 C72 98 62 100 52 110 Z" fill="currentColor" />
+        <circle cx="84" cy="126" r="6" fill="currentColor" stroke="none" />
+        <circle cx="116" cy="126" r="6" fill="currentColor" stroke="none" />
+        <path d="M84 142 Q100 158 116 142" fill="none" />
+        <circle cx="70" cy="140" r="7" fill="var(--color-crayon-pink)" stroke="none" opacity=".6" />
+        <circle cx="130" cy="140" r="7" fill="var(--color-crayon-pink)" stroke="none" opacity=".6" />
       </g>
     </svg>
   )

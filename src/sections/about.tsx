@@ -1,5 +1,5 @@
 import { Check } from 'lucide-react'
-import { ThoughtBubble } from '@/components/brand/illustrations'
+import { Kid } from '@/components/brand/illustrations'
 import { Highlighter } from '@/components/motion/highlighter'
 import { Reveal } from '@/components/motion/reveal'
 import { Container, Section } from '@/components/ui/layout'
@@ -21,7 +21,7 @@ export function About() {
                 className="grid aspect-[4/5] w-full place-items-center rounded-xs bg-[linear-gradient(160deg,var(--color-paper)_0%,var(--color-accent-soft)_100%)] text-center"
               >
                 <div className="px-6">
-                  <ThoughtBubble className="mx-auto h-24 w-auto" />
+                  <Kid className="mx-auto h-24 w-auto" />
                   <p className="mt-4 text-[0.9375rem] font-bold text-ink-soft">Add a photo of the reading corner</p>
                 </div>
               </div>
