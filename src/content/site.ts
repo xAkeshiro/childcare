@@ -58,11 +58,10 @@ export const facts = [
 ] as const
 
 export const about = {
-  headline: `Hi, I'm ${site.owner}.`,
-  paragraphs: [
-    'Little Thinkers is my home and my heart. I opened it because I believe the early years deserve more than a place to wait for pickup. Children this age are doing the hardest, most important learning of their lives, and they do it best when they feel safe, known, and free to get a little messy.',
-    'Our days are play-based and unhurried. We read a lot, sing a lot, paint with our hands, count the snap peas at lunch, and go outside every day, rain or shine. Parents get a daily note, photos, and a real conversation at pickup, not just a clipboard.',
-  ],
+  /** The owner's introduction. Replace the headline with her greeting and add her
+   *  paragraphs here; the section hides this block while `paragraphs` is empty. */
+  headline: 'Intro coming soon',
+  paragraphs: [] as string[],
   quote:
     'Every child has little aha moments, the second something clicks and their whole face lights up. My job is to make room for as many of those as possible.',
   credentials: [

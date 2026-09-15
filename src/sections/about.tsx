@@ -31,12 +31,14 @@ export function About() {
 
           <Reveal delay={0.08}>
             <H2>{about.headline}</H2>
-            <div className="mt-6 space-y-5 text-[1.0625rem] leading-[1.7] text-ink-soft">
-              {about.paragraphs.map((p) => (
-                <p key={p.slice(0, 24)}>{p}</p>
-              ))}
-            </div>
-            <blockquote className="mt-9 max-w-[30rem] font-display text-[1.75rem] font-semibold leading-[1.3] text-ink">
+            {about.paragraphs.length > 0 && (
+              <div className="mt-6 space-y-5 text-[1.0625rem] leading-[1.7] text-ink-soft">
+                {about.paragraphs.map((p) => (
+                  <p key={p.slice(0, 24)}>{p}</p>
+                ))}
+              </div>
+            )}
+            <blockquote className="mt-8 max-w-[30rem] font-display text-[1.75rem] font-semibold leading-[1.3] text-ink">
               Every child has little{' '}
               <Highlighter action="underline" color="var(--color-marker)" strokeWidth={3} padding={1} iterations={2}>
                 aha moments

@@ -227,7 +227,8 @@ height, top, or left.
    lede with the facts a parent scans for, one button and one text link, and a one-line trust
    list. No illustration; the headline is the hero.
 3. **Facts strip.** Hours, ages, group size, meals. Stated once, here.
-4. **About.** Photo mat, "Hi, I'm [Name].", two paragraphs, the pull quote, credentials.
+4. **About.** Photo mat, the owner's greeting as the h2 (a placeholder until she writes it),
+   her paragraphs, the pull quote, credentials.
 5. **Programs.** Three cards: Young toddlers, Toddlers, Preschool.
 6. **Our day.** The sticky intro and the ruled schedule sheet, 8:00 to 4:30.
 7. **Tuition.** One card, the daily rate, what's included, the button.
