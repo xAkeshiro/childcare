@@ -27,7 +27,7 @@ TypeScript + Tailwind CSS v4 + Motion (`motion/react`). No backend.
 
 ## Rules
 
-- Keep effects light: scroll reveals, hover lifts, the FAQ accordion, the hero highlight,
-  and the mascot's idle float are the whole motion vocabulary.
+- Keep effects light: scroll reveals, color-only hovers, the FAQ accordion, the hero
+  highlight, and the one-time hero block settle are the whole motion vocabulary.
 - Every text/background pair must pass 4.5:1. The `-deep` crayon variants exist for text.
 - Placeholders stay in [square brackets] until the owner supplies the real values.

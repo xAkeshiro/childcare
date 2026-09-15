@@ -12,12 +12,16 @@ function a11y(title?: string) {
   return title ? { role: 'img' as const, 'aria-label': title } : { 'aria-hidden': true as const }
 }
 
-/** The mascot: a simple cartoon kid beaming with an idea. Rays are crayon orange; the outline uses currentColor. */
-export function Kid({ title, className, ...props }: Svg) {
+/** The mascot: a simple cartoon kid beaming with an idea. Rays are crayon orange; the outline uses currentColor.
+ *  Pass `rays={false}` to draw the rays separately (the hero scene animates them). */
+export const KID_RAYS =
+  'M100 52L100 26 M129 59L139 39 M71 59L61 39 M151 76L166 63 M49 76L34 63 M161 98L178 93 M39 98L22 93'
+
+export function Kid({ title, className, rays = true, ...props }: Svg & { rays?: boolean }) {
   return (
     <svg viewBox="0 0 200 200" className={cn('text-ink', className)} {...a11y(title)} {...props}>
       <g stroke="currentColor" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M100 52L100 26 M129 59L139 39 M71 59L61 39 M151 76L166 63 M49 76L34 63 M161 98L178 93 M39 98L22 93" fill="none" stroke="var(--color-crayon-orange)" />
+        {rays && <path d={KID_RAYS} fill="none" stroke="var(--color-crayon-orange)" />}
         <circle cx="50" cy="124" r="10" fill="var(--color-paper-2)" />
         <circle cx="150" cy="124" r="10" fill="var(--color-paper-2)" />
         <circle cx="100" cy="118" r="52" fill="var(--color-paper-2)" />
@@ -48,19 +52,6 @@ export function Handprint({ title, className, ...props }: Svg) {
   )
 }
 
-/** A crayon, pointing up. Color via className. */
-export function Crayon({ title, className, ...props }: Svg) {
-  return (
-    <svg viewBox="0 0 40 170" className={className} {...a11y(title)} {...props}>
-      <path d="M20 5 L31 34 H9 Z" fill="currentColor" stroke="currentColor" strokeWidth="4" strokeLinejoin="round" />
-      <rect x="7" y="30" width="26" height="136" rx="4" fill="currentColor" />
-      <rect x="7" y="50" width="26" height="86" fill="#000" opacity=".16" />
-      <rect x="7" y="72" width="26" height="42" fill="#fff" opacity=".88" />
-      <path d="M10 93 H30" stroke="#000" strokeWidth="2.5" strokeLinecap="round" opacity=".35" />
-    </svg>
-  )
-}
-
 /** A wooden alphabet block. Color via className; the letter is drawn in ink. */
 export function Block({ letter, title, className, ...props }: Svg & { letter: string }) {
   return (
@@ -76,27 +67,6 @@ export function Block({ letter, title, className, ...props }: Svg & { letter: st
       <text x="47.5" y="89" textAnchor="middle" fontFamily="var(--font-display)" fontWeight="700" fontSize="46" fill="var(--color-ink)">
         {letter}
       </text>
-    </svg>
-  )
-}
-
-/** A five-point star sticker. */
-export function Star({ title, className, ...props }: Svg) {
-  return (
-    <svg viewBox="0 0 100 100" className={className} {...a11y(title)} {...props}>
-      <polygon points="50,6 61,38 95,38 68,59 79,92 50,72 21,92 32,59 5,38 39,38" fill="currentColor" stroke="var(--color-ink)" strokeWidth="5" strokeLinejoin="round" />
-    </svg>
-  )
-}
-
-/** A sun. */
-export function Sun({ title, className, ...props }: Svg) {
-  return (
-    <svg viewBox="0 0 120 120" className={className} {...a11y(title)} {...props}>
-      <g stroke="var(--color-ink)" strokeWidth="5" strokeLinecap="round">
-        <path d="M60 8V22 M60 98V112 M8 60H22 M98 60H112 M23 23l10 10 M87 87l10 10 M97 23l-10 10 M33 87l-10 10" />
-        <circle cx="60" cy="60" r="26" fill="var(--color-crayon-yellow)" />
-      </g>
     </svg>
   )
 }

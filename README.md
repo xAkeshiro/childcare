@@ -28,7 +28,8 @@ Node 20 or newer.
 | `src/sections/` | One file per section, in page order (navbar, hero, about, programs, day, tuition, abcs, steps, faq, visit, footer) |
 | `src/components/ui/` | Button, Card, Container, Section, headings, labels |
 | `src/components/motion/` | Reveal, AnimatedGroup, Accordion, Highlighter |
-| `src/components/brand/illustrations.tsx` | Kid mascot, handprint, crayon, alphabet block, star, sun |
+| `src/components/brand/illustrations.tsx` | Kid mascot, handprint, alphabet block |
+| `src/components/brand/hero-scene.tsx` | The hero illustration: the kid beside the tower of the three values |
 | `BRAND.md` | The brand kit |
 | `NAME-RESEARCH.md` | Why the site isn't called Little Thinkers, and the alternatives checked |
 | `.claude/skills/` | Project skills: framer-motion, 21st-dev-components, ui-ux-pro-max |

@@ -1,12 +1,11 @@
-import { m } from 'motion/react'
 import { Baby, Clock, UtensilsCrossed, Users } from 'lucide-react'
-import { Block, Kid, Crayon } from '@/components/brand/illustrations'
+import { HeroScene } from '@/components/brand/hero-scene'
 import { Highlighter } from '@/components/motion/highlighter'
 import { Button } from '@/components/ui/button'
 import { Card, IconCircle } from '@/components/ui/card'
 import { Container } from '@/components/ui/layout'
 import { Label } from '@/components/ui/typography'
-import { facts, hero, site } from '@/content/site'
+import { facts, hero } from '@/content/site'
 
 const factIcons = { clock: Clock, baby: Baby, home: Users, apple: UtensilsCrossed } as const
 
@@ -16,8 +15,8 @@ export function Hero() {
       <Container>
         <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
           <div className="max-w-[36rem]">
-            {/* On phones the mascot sits above the headline; the full scene shows from lg up. */}
-            <Kid className="mb-6 h-24 w-auto lg:hidden" title="The Little Thinkers mascot, a cartoon kid beaming with an idea" />
+            {/* On phones the scene sits above the headline, still; on desktop it takes the right column. */}
+            <HeroScene className="mb-8 w-full max-w-[360px] lg:hidden" />
             <p className="text-[0.9375rem] font-semibold text-ink-soft">{hero.eyebrow}</p>
             <h1 className="mt-3 font-display text-h1 font-semibold text-ink">
               {hero.headline.before}
@@ -45,7 +44,7 @@ export function Hero() {
             </p>
           </div>
 
-          <HeroArt />
+          <HeroScene className="mx-auto hidden w-full max-w-[540px] lg:block" animate />
         </div>
 
         {/* At a glance: the four facts a parent scans for, as one contained object. */}
@@ -67,32 +66,5 @@ export function Hero() {
         </Card>
       </Container>
     </section>
-  )
-}
-
-/** One subject (the mascot) with air around it, one grounded prop group (the blocks), one supporting prop (crayons). */
-function HeroArt() {
-  return (
-    <div className="relative mx-auto hidden aspect-[5/4] w-full max-w-[520px] lg:block" aria-hidden="true">
-      <m.div
-        className="absolute left-1/2 top-0 h-[64%] w-auto -translate-x-1/2"
-        animate={{ y: [0, -8, 0] }}
-        transition={{ duration: 6, ease: 'easeInOut', repeat: Infinity }}
-      >
-        <Kid className="h-full w-auto" title={`${site.name} mascot`} />
-      </m.div>
-      <div className="absolute bottom-0 left-[6%] w-[38%]">
-        <div className="relative aspect-[2/1.86]">
-          <Block letter="C" className="absolute left-[24%] top-0 w-[50%] text-crayon-green" />
-          <Block letter="A" className="absolute bottom-0 left-0 w-[50%] text-crayon-red" />
-          <Block letter="B" className="absolute bottom-0 right-0 w-[50%] text-crayon-blue" />
-        </div>
-      </div>
-      <div className="absolute bottom-0 right-[10%] flex items-end">
-        <Crayon className="h-36 w-auto origin-bottom -rotate-[18deg] text-crayon-purple" />
-        <Crayon className="-ml-3 h-40 w-auto origin-bottom text-crayon-green" />
-        <Crayon className="-ml-3 h-36 w-auto origin-bottom rotate-[18deg] text-crayon-orange" />
-      </div>
-    </div>
   )
 }

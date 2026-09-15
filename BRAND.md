@@ -43,14 +43,14 @@ size. Source: `Kid` in `src/components/brand/illustrations.tsx`. Favicon:
 **Wordmark.** "Little Thinkers" in Fredoka 600, ink, always on one line. "Family Child
 Care" beneath it in the 13px label style (ink-soft), hidden on phones.
 
-**Sizes.** Header 36px, footer 32px, hero subject about 300px on desktop and 96px above
-the headline on phones, favicon 64-unit box. Never below 24px.
+**Sizes.** Header 36px, footer 32px, full-figure in the hero scene (desktop right column,
+above the headline on phones), favicon. Never below 24px.
 
 **Clear space.** At least half the mark's height on every side. Nothing overlaps it.
 
 **Don't.** Recolor the outline, add gradients or shadows, rotate it, place it on a tinted
 band, use it as a bullet, or pair it with a second mascot. The kid appears as logo
-(header, footer, favicon, share image) and as the hero subject. Nowhere else.
+(header, footer, favicon, share image) and, with a body, in the hero scene. Nowhere else.
 
 ## 3. Color
 
@@ -150,15 +150,16 @@ joins, no gradients, no shadows, no wobble filters. Every drawing takes its colo
 
 | Asset | Where it appears | Where it must not |
 | --- | --- | --- |
-| The kid | Header, footer, favicon, share image, hero subject, the photo placeholder | Bullets, cards, backgrounds |
-| Alphabet blocks | The hero stack (A, B, C) and Our ABCs at 96px, where the letters are the content | Program cards, icons |
-| Crayons | The fan in the hero, three colors, grounded at the bottom right | Anywhere else |
+| The kid | Header, footer, favicon, share image, the hero scene (full figure), the photo placeholder | Bullets, cards, backgrounds |
+| Alphabet blocks | The hero tower (A Affection at the base, B Belonging, C Curiosity on top) and Our ABCs at 96px, where the letters are the content | Program cards, icons |
 | Handprints | One cluster of three overlapping prints in the Visit section | Rows, footers, backgrounds |
 | Marker highlight | The word "bright ideas" in the hero and "aha moments" in the pull quote (two per page, maximum) | Nav, labels, buttons |
 | Icons | Lucide only, 20px, stroke 1.75, ink, inside a 40px hairline circle | Emoji, hand-drawn icons |
 
-Composition rule: one subject at 60% or more of the box, one grounded prop group, air
-around both. Never scatter to fill. Stars, suns, and squiggles stay out of the kit.
+Composition rule: every drawing means something. The hero scene is the kid celebrating
+beside the tower of the three values, the building blocks of early life; the words beside
+the blocks come from the Our ABCs content so the two always match. No prop is ever added
+just to fill space. Stars, suns, crayon fans, and squiggles stay out of the kit.
 
 Photos: the About section wants a real photo of the owner in the space, 4:5, in the white
 mat. Until then the placeholder is a soft paper-to-accent wash with the mascot and a plain
@@ -177,14 +178,15 @@ Allowed, with the values used:
   values. Never more than four children.
 - Highlighter: rough-notation draws the marker over 0.7s, once, when in view; static
   under reduced motion.
-- Mascot idle float: 8px travel over 6s, ease-in-out, desktop hero only.
+- Hero settle: on desktop, the top block of the tower lowers 22px into place over 0.7s once
+  on load, then the kid's rays fade in over 0.4s. Still on phones and under reduced motion.
 - Hover and focus: color changes over 0.15 to 0.2s (button fill, link underline, nav
   underline, header shadow). No movement on hover.
 - Mobile menu: opacity and a 8px slide over 0.22s. FAQ accordion: height over 0.3s.
 
 Forbidden: parallax, scroll-jacking, particle or beam backgrounds, marquees, text scramble
 or typewriter effects, spring bounces, rotating or flipping cards, hover scale or tilt,
-autoplaying carousels, anything longer than 0.6s except the mascot loop, animating width,
+autoplaying carousels, anything longer than 0.8s, loops of any kind, animating width,
 height, top, or left.
 
 ## 9. Components
@@ -225,7 +227,8 @@ height, top, or left.
 1. **Header.** Brand, About, Programs, Our day, Tuition, FAQ, Schedule a visit.
 2. **Hero.** Location line, h1 with the marker on "bright ideas", a two-sentence lede with
    the facts a parent scans for, one button and one text link, a one-line trust list, and the
-   mascot with the block stack and crayon fan. Phones show a 96px mascot above the headline.
+   hero scene: the kid celebrating beside the tower of blocks labeled Affection, Belonging,
+   and Curiosity. Phones show the same scene, still, above the headline.
 3. **Facts strip.** Hours, ages, group size, meals. Stated once, here.
 4. **About.** Photo mat, "Hi, I'm [Name].", two paragraphs, the pull quote, credentials.
 5. **Programs.** Three cards: Young toddlers, Toddlers, Preschool.
@@ -248,11 +251,11 @@ The specific choices that keep this from reading as template-made. Check before 
 - [ ] Fredoka only at 600 on headings; Nunito for all interface text; handwriting once.
 - [ ] Each drawing has one home (section 7). Blocks are content, not bullets.
 - [ ] The marker appears twice at most, drawn, never stretched.
-- [ ] The hero has one subject with air around it, not a scatter of props.
+- [ ] The hero illustration means something (the tower of values), not a scatter of props.
 - [ ] Icons are Lucide in hairline circles. No emoji, no metaphor icons.
 - [ ] The copy keeps its specifics (snap peas, three books, hugs at the door) and has no
       brochure words.
-- [ ] Nothing bounces, tilts, or glows. One loop, one drawn mark, one reveal style.
+- [ ] Nothing bounces, tilts, or glows. One settle, one drawn mark, one reveal style.
 
 ## 12. Tokens
 

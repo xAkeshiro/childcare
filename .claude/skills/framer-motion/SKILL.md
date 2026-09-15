@@ -19,8 +19,8 @@ Do not add per-component media queries for that; do not remove the wrapper.
 ## Brand motion rules (from BRAND.md, section 8)
 
 1. **Motion explains, it never decorates.** Animate at most one or two things per screen.
-2. **Allowed:** scroll reveals (opacity 0→1, rise of 8–14px, 0.4–0.5s, `[0.22, 1, 0.36, 1]`), staggered card entrances (0.06–0.1s apart), hover lifts of 1–2px with a shadow change, the FAQ accordion height transition (0.3s), the one rough-notation highlight in the hero, the mascot's slow idle float.
-3. **Forbidden:** parallax, scroll-jacking, particle or beam backgrounds, text scramble or typewriter effects, spring bounces on entrances, rotating or flipping cards, infinite marquees of anything but logos, autoplaying carousels, animations longer than 0.6s (except the mascot's idle loop), animating `width`, `height`, `top`, or `left` (use transforms and opacity only).
+2. **Allowed:** scroll reveals (opacity 0→1, rise of 8–14px, 0.4–0.5s, `[0.22, 1, 0.36, 1]`), staggered card entrances (0.06–0.1s apart), hover lifts of 1–2px with a shadow change, the FAQ accordion height transition (0.3s), the two rough-notation marks, and the one-time hero settle (the top block lowers into place, then the rays fade in) on desktop only.
+3. **Forbidden:** parallax, scroll-jacking, particle or beam backgrounds, text scramble or typewriter effects, spring bounces on entrances, rotating or flipping cards, infinite marquees of anything but logos, autoplaying carousels, loops of any kind, animations longer than 0.8s, animating `width`, `height`, `top`, or `left` (use transforms and opacity only).
 4. **Everything meant to be read is visible at rest.** Reveals start from a hidden state only when the element is below the fold; the hero never hides its text.
 
 ## The components to reuse (do not reinvent)
