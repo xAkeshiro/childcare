@@ -11,7 +11,6 @@
   --color-line: #DCCDB3;
   --color-line-soft: #EDE3CF;
   --color-line-strong: #948B7A;
-  --color-rule: #C3D9F5;
 
   /* Ink */
   --color-ink: #2F2A44;
@@ -111,17 +110,6 @@
   }
   button, [role="button"], a { cursor: pointer; }
   input, select, textarea { font: inherit; color: inherit; }
-}
-
-/* Ruled paper for the daily schedule: a hairline every 32px, text sits on the rule. */
-@utility ruled-paper {
-  background-color: var(--color-paper-2);
-  background-image: repeating-linear-gradient(
-    to bottom,
-    transparent 0 31px,
-    var(--color-rule) 31px 32px
-  );
-  background-size: 100% 32px;
 }
 
 /* Visually hidden but readable by screen readers (skip link, form hints). */

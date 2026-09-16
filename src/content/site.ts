@@ -110,16 +110,34 @@ export const day = {
   intro:
     "Young children run on rhythm. Our schedule is the same every day, with plenty of room inside it for a long book, a big puddle, or a project that just can't stop yet.",
   note: 'Younger toddlers nap when they need to, not only at nap time.',
-  items: [
-    { time: '8:00', title: 'Arrival, breakfast and free play', detail: 'Hugs at the door, then puzzles, blocks, and the play kitchen' },
-    { time: '9:15', title: 'Circle time', detail: 'Songs, the weather, the letter of the week, and a story' },
-    { time: '9:45', title: 'Art and sensory', detail: 'Crayons, finger paint, playdough, water tables' },
-    { time: '10:30', title: 'Outdoor play', detail: 'Bikes, bubbles, digging, and a nature hunt' },
-    { time: '11:30', title: 'Lunch', detail: 'Home-cooked, family style. We count the snap peas.' },
-    { time: '12:30', title: 'Nap and quiet time', detail: 'Soft music, books, and rest for tired bodies' },
-    { time: '2:30', title: 'Snack and story time', detail: "Two books, at least. Three if we're lucky." },
-    { time: '3:15', title: 'Outdoor play and little experiments', detail: 'Baking soda volcanoes, shadow tracing, bug watching' },
-    { time: '4:00', title: 'Free play and pickup', detail: 'Wind-down play and a real chat about the day, until 4:30' },
+  phases: [
+    {
+      name: 'Morning',
+      range: '8:00 to 11:30',
+      items: [
+        { time: '8:00', title: 'Arrival, breakfast and free play', detail: 'Hugs at the door, then puzzles, blocks, and the play kitchen' },
+        { time: '9:15', title: 'Circle time', detail: 'Songs, the weather, the letter of the week, and a story' },
+        { time: '9:45', title: 'Art and sensory', detail: 'Crayons, finger paint, playdough, water tables' },
+        { time: '10:30', title: 'Outdoor play', detail: 'Bikes, bubbles, digging, and a nature hunt' },
+      ],
+    },
+    {
+      name: 'Midday',
+      range: '11:30 to 2:30',
+      items: [
+        { time: '11:30', title: 'Lunch', detail: 'Home-cooked, family style. We count the snap peas.' },
+        { time: '12:30', title: 'Nap and quiet time', detail: 'Soft music, books, and rest for tired bodies' },
+      ],
+    },
+    {
+      name: 'Afternoon',
+      range: '2:30 to 4:30',
+      items: [
+        { time: '2:30', title: 'Snack and story time', detail: "Two books, at least. Three if we're lucky." },
+        { time: '3:15', title: 'Outdoor play and little experiments', detail: 'Baking soda volcanoes, shadow tracing, bug watching' },
+        { time: '4:00', title: 'Free play and pickup', detail: 'Wind-down play and a real chat about the day, until 4:30' },
+      ],
+    },
   ],
 } as const
 

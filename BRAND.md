@@ -67,7 +67,6 @@ ground named in each row.
 | `line` | #DCCDB3 | 1px hairline on every container | decorative |
 | `line-soft` | #EDE3CF | 1px dividers inside cards and between sections | decorative |
 | `line-strong` | #948B7A | Input borders only (3.4:1 on white, the non-text minimum is 3:1) | non-text |
-| `rule` | #C3D9F5 | The ruled lines on the schedule sheet | decorative |
 | `ink` | #2F2A44 | Headings, body, nav, links, block letters, illustration outlines | see above |
 | `ink-soft` | #5C566F | Secondary text: ledes, summaries, labels, license and privacy lines | 6.5:1 on paper |
 | `ink-mute` | #6F6983 | Placeholder text inside inputs only | 5.2:1 on white |
@@ -124,9 +123,9 @@ data (facts, age ranges, contact rows, footer columns), never a section.
 | `radius-xs` | 6px | The skip link, focus corners, the photo inside its mat |
 | `radius-sm` | 10px | Inputs, select, textarea, the form status note |
 | `radius-md` | 12px | Buttons, the photo mat |
-| `radius-lg` | 16px | The schedule sheet, the mobile menu panel |
+| `radius-lg` | 16px | The mobile menu panel |
 | `radius-xl` | 20px | Cards: programs, facts, tuition, the form |
-| `shadow-soft` | 0 1px 2px rgb(47 42 68 / 0.06) | Cards and the schedule sheet |
+| `shadow-soft` | 0 1px 2px rgb(47 42 68 / 0.06) | Cards |
 | `shadow-lift` | 0 8px 24px rgb(47 42 68 / 0.10) | The photo mat and the open mobile menu only |
 
 Borders are 1px everywhere. Nothing is a pill. Nothing rotates except the photo mat (-1deg)
@@ -173,7 +172,7 @@ system asks for reduced motion (`<MotionConfig reducedMotion="user">` in `main.t
 
 Allowed, with the values used:
 - Reveal: opacity 0 to 1 and a 12px rise, 0.45s, ease `[0.22, 1, 0.36, 1]`, once, when a
-  quarter of the element is visible. On section headings, the photo mat, the sheet, the form.
+  tenth of the element is visible. On section headings, the photo mat, the itinerary, the form.
 - Staggered group: the same reveal, 0.08s apart, on the three program cards and the three
   values. Never more than four children.
 - Highlighter: rough-notation draws the marker over 0.7s, once, when in view; static
@@ -203,8 +202,11 @@ height, top, or left.
 - **Photo mat.** White, 12px padding, 1px line, radius 12px, lift shadow, -1deg, Patrick
   Hand caption beneath.
 - **Pull quote.** Fredoka 600 28px in ink with the marker underline on two words.
-- **Schedule sheet.** White, 1px line, radius 16px, rules every 32px in `rule`; every text
-  line is 32px tall so words sit on the rules; times in Fredoka 600 accent, tabular figures.
+- **Daily itinerary.** No card and no paper texture. Three phases (Morning, Midday,
+  Afternoon), each opening with a phase name in Fredoka 600 and its time range in the label
+  style, over a 2px ink rule. Rows below it are a two-column grid: the time right-aligned in
+  Fredoka 600 accent with tabular figures, then the title in Nunito 700 and the detail in
+  ink-soft, separated by 1px hairlines.
 - **Tuition card.** Label, the daily figure in Fredoka 600 52px with "per day, per child"
   beside it, the billing line, the primary button, a hairline, then what's included.
 - **Steps.** Numbered 01 to 03 in Fredoka 600 accent above a 1px rule; numbers are used
@@ -230,7 +232,8 @@ height, top, or left.
 4. **About.** Photo mat, the owner's greeting as the h2 (a placeholder until she writes it),
    her paragraphs, the pull quote, credentials.
 5. **Programs.** Three cards: Young toddlers, Toddlers, Preschool.
-6. **Our day.** The sticky intro and the ruled schedule sheet, 8:00 to 4:30.
+6. **Our day.** The sticky intro beside the itinerary: Morning, Midday, and Afternoon,
+   8:00 to 4:30.
 7. **Tuition.** One card, the daily rate, what's included, the button.
 8. **Our ABCs.** Affection, Belonging, Curiosity, with the 96px blocks.
 9. **How it works.** Visit, Paperwork, First day.
@@ -266,7 +269,6 @@ The `@theme` block in `src/index.css` is the executable version of this document
   --color-line: #DCCDB3;
   --color-line-soft: #EDE3CF;
   --color-line-strong: #948B7A;
-  --color-rule: #C3D9F5;
   --color-ink: #2F2A44;
   --color-ink-soft: #5C566F;
   --color-ink-mute: #6F6983;
